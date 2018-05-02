@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/cms', 'CMSController@index')->name('cms');
+Route::get('/cms/{id}','CMSController@edit')->name('cms.edit');
+Route::put('/cms/{id}','CMSController@update')->name('cms.update');
