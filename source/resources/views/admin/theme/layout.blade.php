@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css') }}">
 
   <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-styles.css') }}">
+  
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -33,6 +34,10 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+<script src="{{ asset('bower_components/ckeditor/ckeditor.js') }}"></script>        
+
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -82,5 +87,6 @@
 <!-- AdminLTE for demo purposes -->
 
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+
 </body>
 </html>

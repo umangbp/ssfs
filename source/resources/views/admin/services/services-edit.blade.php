@@ -10,7 +10,7 @@
 	  </h1>
 	  <ol class="breadcrumb">
 		<li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-		<li><a href="{{ route('cms') }}">CMS</a></li>
+		<li><a href="{{ route('services.list') }}">Services</a></li>
 		<li><a href="#">Edit</a></li>
 	  </ol>
 	</section>
@@ -28,26 +28,14 @@
 						    </div>
 						@endif
 
-						{{ Form::model($cms_data,['route' => ['cms.update', $cms_data->id], 'method' => 'PUT']) }}
+						{{ Form::model($service,['route' => ['services.update', $service->id], 'method' => 'PUT']) }}
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 							    	
-							    	{{ Form::label('slug', 'Slug*', ['class' => '']) }}
-							    	{{ Form::text('slug',null,['class' => 'form-control', 'placeholder' => 'Please Enter Slug', 'disabled' => true]) }}
-									<div class="err-block">
-										<span class="text-danger">{{ $errors->first('slug') }}</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group"> 	
 							    	{{ Form::label('title', 'Title*', ['class' => '']) }}
-							    	{{ Form::text('title',null,['class' => 'form-control', 'placeholder' => 'Please Title Here']) }}
-
-							    	<div class="err-block">
+							    	{{ Form::text('title',null,['class' => 'form-control', 'placeholder' => 'Please Enter Title']) }}
+									<div class="err-block">
 										<span class="text-danger">{{ $errors->first('title') }}</span>
 									</div>
 								</div>
@@ -55,11 +43,21 @@
 						</div>
 						<div class="row">
 							<div class="col-md-8">
-								{{ Form::label('content', 'Content*', ['class' => '']) }}
-								{{ Form::textarea('content',null, ['id' => 'content-editor']) }}
+								{{ Form::label('short_desc', 'Short Description*', ['class' => '']) }}
+								{{ Form::textarea('short_desc',null, ['id' => 'short_desc-editor']) }}
 
 								<div class="err-block">
-										<span class="text-danger">{{ $errors->first('content') }}</span>
+										<span class="text-danger">{{ $errors->first('short_desc') }}</span>
+									</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-8 pad-top">
+								{{ Form::label('description', 'Description*', ['class' => '']) }}
+								{{ Form::textarea('description',null, ['id' => 'description-editor']) }}
+
+								<div class="err-block">
+										<span class="text-danger">{{ $errors->first('description') }}</span>
 									</div>
 							</div>
 						</div>
@@ -77,7 +75,8 @@
 		</div>
 	</section>
 <script type="text/javascript">
-    CKEDITOR.replace( 'content-editor' );
+	CKEDITOR.replace( 'short_desc-editor' );
+    CKEDITOR.replace( 'description-editor' );
 </script>
 
 @endsection

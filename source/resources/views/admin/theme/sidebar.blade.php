@@ -27,8 +27,8 @@
         <li class="header">MAIN NAVIGATION</li>
         
         <li class="active treeview"><a href="#"><i class="fa fa-dashboard text-aqua"></i> <span>Dashboard</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>CMS</span></a></li>
-        <li><a href="#"><i class="fa fa-truck text-aqua"></i> <span>Services</span></a></li>
+        <li><a href="{{ route('cms') }}"><i class="fa fa-circle-o text-aqua"></i> <span>CMS</span></a></li>
+        <li><a href="{{ route('services.list') }}"><i class="fa fa-truck text-aqua"></i> <span>Services</span></a></li>
         <li><a href="#"><i class="fa fa-group text-aqua"></i> <span>Team</span></a></li>
       </ul>
     </section>

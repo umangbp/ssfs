@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CMS extends Model
+class Services extends Model
 {
     
     /**
@@ -16,5 +16,5 @@ class CMS extends Model
         
     ];
 
-     protected $table = 'cms';
+     protected $table = 'services';
 }

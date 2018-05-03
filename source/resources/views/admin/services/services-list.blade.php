@@ -5,12 +5,12 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 	  <h1>
-	    CMS
+	    Services
 	    <small>List</small>
 	  </h1>
 	  <ol class="breadcrumb">
-	    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-	    <li><a href="#">CMS</a></li>
+	    <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+	    <li><a href="{{ route('services.list') }}">services</a></li>
 	  </ol>
 	</section>
 
@@ -33,9 +33,10 @@
               	<thead>
 	              	<tr>
 	              		<th>#</th>
-	              		<th>Slug</th>
 	              		<th>Title</th>
-	              		<th>Content</th>
+	              		<th>Short Description</th>
+	              		<th>Description</th>
+	              		<th>Position</th>
 	              		<th>Last Updated</th>
 	              		<th>Actions</th>
 	              	</tr>
@@ -43,25 +44,26 @@
               	
               	<tbody>
 
-	              	@isset($cms_pages)
+	              	@isset($services)
 
-	              		@foreach($cms_pages as $cms_page)
+	              		@foreach($services as $service)
 
 	              			<tr>
-	              				<td>{{ $cms_page['id'] }}</td>
-	              				<td>{{ $cms_page['slug'] }}</td>
-	              				<td>{{ $cms_page['title'] }}</td>
-	              				<td><?php echo mb_strimwidth(strip_tags($cms_page['content']),0,100,'...') ?></td>
-	              				<td>{{ $cms_page['updated_at'] }}</td>
-	              				<td><a class="btn btn-info" href="{{ URL('cms/'.$cms_page['id']) }}"><i class="fa fa-edit"></a></td>
+	              				<td>{{ $service['id'] }}</td>
+	              				<td>{{ $service['title'] }}</td>
+	              				<td><?php echo mb_strimwidth(strip_tags($service['short_desc']),0,50,'...') ?></td>
+	              				<td><?php echo mb_strimwidth(strip_tags($service['description']),0,100,'...') ?></td>
+	              				<td>{{ $service['position'] }}</td>
+	              				<td>{{ $service['updated_at'] }}</td>
+	              				<td><a class="btn btn-info" href="{{ URL('services/'.$service['id']) }}"><i class="fa fa-edit"></a></td>
 	              			</tr>
 	              		@endforeach
 
 	              	@endisset
 
-	              	@empty($cms_pages)
+	              	@empty($services)
 	              			<tr>
-	              				<td  colspan="5" class="text-center"><span>No CMS Content Available</span></td>
+	              				<td  colspan="7" class="text-center"><span>No Service Available</span></td>
 	              			</tr>
 	              	@endempty
               	

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\CMS;
+use Illuminate\Http\Request;
+use Validator;
 
 class CMSController extends Controller
 {
@@ -59,7 +61,7 @@ class CMSController extends Controller
     public function edit($id)
     {
         // fetch content from data for edited record
-        $cms = CMS::where('status',1)->where('id', $id)->select('id','slug','title','content','updated_at')->first();
+        $cms = CMS::find($id);
 
         // if record exist and data fetched successfully 
         if(!empty($cms)){
@@ -67,7 +69,7 @@ class CMSController extends Controller
         }
         else{
             // if record does not exist of error while fetching record 
-            return redirect('/cms');
+            return redirect('not-found');
         }
     }
 
@@ -80,7 +82,40 @@ class CMSController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        // validate the data before saving
+        $validator = Validator::make($request->all(), [
+            'title' => 'required | max:200',
+            'content' => 'required'
+        ]);
+
+        // if all the validation rules are satisfied
+        if(!$validator->fails()){
+
+            try {
+                
+                // update the information
+                $updated_cms = CMS::where('id', $id)->update([
+                    'title' => $request->title,
+                    'content' => $request->content
+                ]);
+
+                return redirect('cms')->with('update_status', 'CMS content updated successfully');
+
+            } catch (Exception $e) {
+                
+                return back()->with('update_failed', 'Something went wrong. Please try again in a while')->withInput();
+
+            }
+
+        }
+        else{
+
+            return back()->withErrors($validator)
+                        ->withInput();
+
+        }
+
     }
 
     /**
