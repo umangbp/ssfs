@@ -13,7 +13,7 @@
 
 Route::get('ssfs-admin/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('ssfs-admin/login', 'Auth\LoginController@login');
-Route::post('ssfs-admin/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('ssfs-admin/logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
 Route::get('ssfs-admin/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
