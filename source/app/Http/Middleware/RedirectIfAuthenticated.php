@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/ssfs-admin/');
+            return redirect('ssfs-admin/');
         }
 
         return $next($request);

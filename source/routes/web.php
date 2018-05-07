@@ -25,7 +25,7 @@ Route::post('ssfs-admin/password/email', 'Auth\ForgotPasswordController@sendRese
 Route::get('ssfs-admin/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('ssfs-admin/password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('ssfs-admin/not-found', function(){
+Route::get('.', function(){
 	return view('admin.theme.404-page');
 })->name('not-found');
 
