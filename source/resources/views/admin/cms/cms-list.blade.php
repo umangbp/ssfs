@@ -53,7 +53,7 @@
 	              				<td>{{ $cms_page['title'] }}</td>
 	              				<td><?php echo mb_strimwidth(strip_tags($cms_page['content']),0,100,'...') ?></td>
 	              				<td>{{ $cms_page['updated_at'] }}</td>
-	              				<td><a class="btn btn-info" href="{{ URL('cms/'.$cms_page['id']) }}"><i class="fa fa-edit"></a></td>
+	              				<td><a class="btn btn-info" href="{{ URL('ssfs-admin/cms/'.$cms_page['id']) }}"><i class="fa fa-edit"></a></td>
 	              			</tr>
 	              		@endforeach
 

@@ -9,7 +9,7 @@
 	    <small>List</small>
 	  </h1>
 	  <ol class="breadcrumb">
-	    <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+	    <li><a href="{{ route('ssfs.admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
 	    <li><a href="{{ route('services.list') }}">services</a></li>
 	  </ol>
 	</section>
@@ -21,10 +21,10 @@
           <div class="box box-info">
             <div class="box-body pad">
               
-            	@if (session('update_status'))
+            	@if (session('update_succ'))
 				    <div class="alert alert-success">
 				    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-				        <span>{{ session('update_status') }}</span>
+				        <span>{{ session('update_succ') }}</span>
 				    </div>
 				@endif
 
@@ -55,7 +55,7 @@
 	              				<td><?php echo mb_strimwidth(strip_tags($service['description']),0,100,'...') ?></td>
 	              				<td>{{ $service['position'] }}</td>
 	              				<td>{{ $service['updated_at'] }}</td>
-	              				<td><a class="btn btn-info" href="{{ URL('services/'.$service['id']) }}"><i class="fa fa-edit"></a></td>
+	              				<td><a class="btn btn-info" href="{{ URL('ssfs-admin/services/'.$service['id']) }}"><i class="fa fa-edit"></a></td>
 	              			</tr>
 	              		@endforeach
 

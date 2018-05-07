@@ -25,7 +25,7 @@ class ServicesController extends Controller
             return view('admin.services.services-list')->with('services', $services);
 
         } catch (Exception $e) {
-            
+            return redirect('ssfs-admin/not-found');
         }
 
     }
@@ -79,11 +79,11 @@ class ServicesController extends Controller
                 return view('admin.services.services-edit')->with('service', $service);
             }
             else{
-                return redirect('not-found');
+                return redirect('ssfs-admin/not-found');
             }
 
         } catch (Exception $e) {
-            return redirect('not-found');   
+            return redirect('ssfs-admin/not-found');   
         }
     }
 
@@ -96,7 +96,33 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            
+            // validating the inputs            
+            $validator = Validator::make($request->all(),[
+                'title' => 'required | max:100',
+                'short_desc' => 'required | max: 200',
+                'description' => 'required'
+            ]);
+
+            // if validation rules are satisfied
+            if(!$validator->fails()){
+
+                $update = Services::where('id', $id)->update([
+                    'title' => $request->title,
+                    'short_desc' => $request->short_desc,
+                    'description' => $request->description,
+                ]);
+
+                return redirect('ssfs-admin/services')->with('update_succ', 'Service updated successfully');
+            }
+            else{
+                return back()->withInput()->withErrors($validator);
+            }
+
+        } catch (Exception $e) {
+            return redirect('ssfs-admin/not-found');
+        }
     }
 
     /**

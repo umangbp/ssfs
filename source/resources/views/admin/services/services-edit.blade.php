@@ -9,7 +9,7 @@
 		<small>List</small>
 	  </h1>
 	  <ol class="breadcrumb">
-		<li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li><a href="{{ route('ssfs.admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
 		<li><a href="{{ route('services.list') }}">Services</a></li>
 		<li><a href="#">Edit</a></li>
 	  </ol>

@@ -69,7 +69,7 @@ class CMSController extends Controller
         }
         else{
             // if record does not exist of error while fetching record 
-            return redirect('not-found');
+            return redirect('ssfs-admin/not-found');
         }
     }
 
