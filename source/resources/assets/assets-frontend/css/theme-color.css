@@ -1,0 +1,28 @@
+/*==============================================*/
+/*Theme Color Css*/
+/*==============================================*/
+.tnit-btn,.tnit-navbar-holder,.tnit-services-item .icon-box:after,.tnit-menu-item .price,.btn-menu,.tnit-reservation-row_v2,.reservation-inner span,.btn-book,a.tnit-btn_v2:hover,.tnit-hover_v1:after,.tnit-team-item:before,
+#tnit-testimonial-slider .owl-controls .owl-nav [class*="owl-"]:hover,.btn-design,.tnit-pagination-row .pagination li:hover,.tnit-pagination-row .pagination li a:hover,.tnit-pagination-row .pagination li.active a,.tnit-pagination-row .pagination li a:focus,.widget-tags li a:hover,.tnit-search-form .btn-submit,
+.tnit-navbar-holder .navbar-nav li .dropdown-menu li:after,.tnit-play-btn,.tnit-stats-section,#tnit-team-slider .owl-dots .owl-dot.active span,header .navbar-default .navbar-toggle:hover,header .navbar-default .navbar-toggle:focus{
+	background-color: #faad1c;
+}
+
+
+.tnit-social-links_v2 li a,.listed-inner .icon-box,.welcome a,.tnit-heading-outer span,.tnit-menu-item .text-holder h4,.recipe-bottom-list li .fa,.tnit-tabs-outer .nav-tabs li.active a,.tnit-tabs-outer .nav-tabs li:hover a,.tnit-tabs-outer .nav-tabs li.active a.focus,.btn-full-menu,
+.tnit-social-links_v3 li a:hover,.tnit-copyright-row p span,.tnit-lightboxIcon,.tnit-testimonial-item .bottom-outer h5,.listed2 li:before,.tnit-comments-inner .text-holder .reply,.accordion-tab.ui-accordion-header-active .date,#tnit-accordion .accordion-tab.ui-accordion-header-active .fa-angle-down:before,
+.tnit-address-listed li .fa,.tnit-address-listed li .icomoon{
+	color: #faad1c;
+}
+
+
+.tnit-btn_v1,.tnit-btn:hover,.tnit-services-item .icon-box:hover,.tnit-tabs-nav li:before,.tnit-footer .widget h4:after,#tnit-team-slider .owl-dots .owl-dot.active span,#tnit-team-slider .owl-dots .owl-dot:before,.accordion-tab.ui-accordion-header-active .date:before,.accordion-tab.ui-accordion-header-active:after
+,.accordion-tab.ui-accordion-header-active:before,#tnit-accordion .ui-accordion-content-active.accordion-inner:before,.tnit-address-listed_v2{
+	border-color: #faad1c;
+}
+
+.tnit-menu-item .price:before{
+	border-top-color: #faad1c;
+}
+.tnit-menu-item .price:after{
+	border-bottom-color: #faad1c;
+}

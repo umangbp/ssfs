@@ -11,6 +11,10 @@
 |
 */
 
+/**
+ * ****************************Admin Panel Route**********************************
+ */
+
 Route::get('ssfs-admin/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('ssfs-admin/login', 'Auth\LoginController@login');
 Route::get('ssfs-admin/logout', 'Auth\LoginController@logout')->name('logout');
@@ -25,7 +29,7 @@ Route::post('ssfs-admin/password/email', 'Auth\ForgotPasswordController@sendRese
 Route::get('ssfs-admin/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('ssfs-admin/password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('.', function(){
+Route::get('ssfs-admin/not-found', function(){
 	return view('admin.theme.404-page');
 })->name('not-found');
 
@@ -47,3 +51,20 @@ Route::middleware(['check.login'])->group(function () {
 	Route::put('ssfs-admin/services/{id}', 'ServicesController@update')->name('services.update');
 
 });
+
+
+/**
+ * ****************************Admin Panel Route End**********************************
+ */
+
+
+/**
+ * ****************************Front Route**********************************
+ */
+
+
+
+
+/**
+ * ****************************Front END**********************************
+ */

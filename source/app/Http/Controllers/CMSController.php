@@ -100,7 +100,7 @@ class CMSController extends Controller
                     'content' => $request->content
                 ]);
 
-                return redirect('cms')->with('update_status', 'CMS content updated successfully');
+                return redirect('ssfs-admin/cms')->with('update_status', 'CMS content updated successfully');
 
             } catch (Exception $e) {
                 
@@ -110,10 +110,7 @@ class CMSController extends Controller
 
         }
         else{
-
-            return back()->withErrors($validator)
-                        ->withInput();
-
+            return back()->withErrors($validator)->withInput();
         }
 
     }
