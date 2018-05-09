@@ -63,6 +63,7 @@ Route::middleware(['check.login'])->group(function () {
  */
 
 
+	Route::get('/','Site\SiteController@loadHomePage');
 
 
 /**
