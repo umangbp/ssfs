@@ -14,19 +14,23 @@
       <div class="col-md-7 col-sm-7 col-xs-12">
         <!--About Text start-->
         <div class="tnit-about-text">
-          <h2>What Is Food Notch <br> About Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet turpis ex. Vestibulum commodo eget ipsum id mollis. Mauris maximus, diam id euismod egestas, justo orci molestie massa, sed accumsan eros ipsum sollicitudin quam.</p>
-          <p>Ut est ligula, ullamcorper a imperdiet a, ullamcorper eget quam. Nulla luctus sagittis tellus, in suscipit turpis pharetra fermentum. Fusce in ornare ex. Suspendisse eu mollis ligula, ut aliquam sapien. Donec aliquam rhoncus feugiat.</p>
+          <h2>What Is Shree Shraddha Foods Services?</h2>
+          {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet turpis ex. Vestibulum commodo eget ipsum id mollis. Mauris maximus, diam id euismod egestas, justo orci molestie massa, sed accumsan eros ipsum sollicitudin quam.</p>
+          <p>Ut est ligula, ullamcorper a imperdiet a, ullamcorper eget quam. Nulla luctus sagittis tellus, in suscipit turpis pharetra fermentum. Fusce in ornare ex. Suspendisse eu mollis ligula, ut aliquam sapien. Donec aliquam rhoncus feugiat.</p> --}}
+
+          {!! $content['about_us']->content !!}
           <div class="bottom-holder">
             <a href="about.html" class="tnit-btn tnit-btn_v1">Read More</a>
-            <span class="signature">Mathew Clrak</span>
+            <span class="signature"></span>
           </div>
         </div><!--About Text End-->
       </div>
       <div class="col-md-5 col-sm-5 col-xs-12">
         <!--About Thumb Start-->
         <figure class="tnit-about-thumb">
-          <img src="{{ asset('front/images/about-img-01.jpg') }}" alt="">
+          {{-- <img src="{{ asset('front/images/about-img-01.jpg') }}" alt=""> --}}
+          <img src="{{ asset('front/images/home_page/home_about_us_side_image.webp') }}" alt="">
+          
         </figure><!--About Thumb End-->
       </div>
     </div>
@@ -41,42 +45,31 @@
       <span>-  Our  Services   -</span>
     </div>
     <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-12">
+
+      @foreach ($content['services'] as $key => $service)
+          
+        <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="tnit-services-item">
           <span class="icon-box">
-            <i class="icomoon icon-covered-food-tray-on-a-hand-of-hotel-room-service"></i>
+
+            @if($key == 0)
+              <i class="icomoon icon-food"></i>
+            @elseif($key == 1)
+              <i class="icomoon icon-covered-food-tray-on-a-hand-of-hotel-room-service"></i>
+            @elseif($key == 2)
+              <i class="icomoon icon-wine-glasses-black-couple"></i>
+            @else
+              <i class="icomoon icon-hot-coffee-rounded-cup-on-a-plate-from-side-view"></i>
+            @endif
+            
           </span>
-          <h4>Hotel</h4>
-          <p>Phasellus euismod consequat egestas. Praesent non iaculis nulla. Nulla risus nunc, lobortis id luctus lobortis, tincidunt a mi.</p>
+          <h4>{{ $service->title }}</h4>
+          <p>{{ strip_tags($service->short_desc) }}</p>
         </div>
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="tnit-services-item">
-          <span class="icon-box">
-            <i class="icomoon icon-food"></i>
-          </span>
-          <h4>Food</h4>
-          <p>Phasellus euismod consequat egestas. Praesent non iaculis nulla. Nulla risus nunc, lobortis id luctus lobortis, tincidunt a mi.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="tnit-services-item">
-          <span class="icon-box">
-            <i class="icomoon icon-wine-glasses-black-couple"></i>
-          </span>
-          <h4>CATERING</h4>
-          <p>Phasellus euismod consequat egestas. Praesent non iaculis nulla. Nulla risus nunc, lobortis id luctus lobortis, tincidunt a mi.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="tnit-services-item">
-          <span class="icon-box">
-            <i class="icomoon icon-hot-coffee-rounded-cup-on-a-plate-from-side-view"></i>
-          </span>
-          <h4>EVENT ORGANIZER</h4>
-          <p>Phasellus euismod consequat egestas. Praesent non iaculis nulla. Nulla risus nunc, lobortis id luctus lobortis, tincidunt a mi.</p>
-        </div>
-      </div>
+
+      @endforeach
+
     </div>
   </div>
 </section><!--Services Section End-->
@@ -93,14 +86,11 @@
         <!--Menu Item Start-->
         <div class="tnit-menu-item">
           <div class="text-holder">
-            <h4>American</h4>
-            <p>Etiam aliquet arcu sit amet sodales cursus. Sed auctor lectus id diam egestas fermentum. Suspendisse et tortor posuere, facilisis eros et, laoreet ipsum. </p>
+            <h4>Breakfast</h4>
+            <p>We value the importance of breakfast and that is why we provide one of the best and healthy breakfast menu for your employees.</p>
           </div>
           <figure class="tnit-menu-thumb">
             <img src="{{ asset('front/images/menu-img-01.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$75.00</span>
-            </figcaption>
           </figure>
           <a href="menu.html" class="btn-menu">View Menu</a>
         </div><!--Menu Item End-->
@@ -109,14 +99,11 @@
         <!--Menu Item Start-->
         <div class="tnit-menu-item tnit-menu-item-right">
           <div class="text-holder">
-            <h4>Thai</h4>
+            <h4>Lunch</h4>
             <p>Etiam aliquam eleifend ante, at vestibulum mauris pharetra eu. Maecenas sed risus urna. Aenean eu elit eget sem vestibulum malesuada. Vestibulum. </p>
           </div>
           <figure class="tnit-menu-thumb">
             <img src="{{ asset('front/images/menu-img-02.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$85.00</span>
-            </figcaption>
           </figure>
           <a href="menu.html" class="btn-menu">View Menu</a>
         </div><!--Menu Item End-->
@@ -125,14 +112,11 @@
         <!--Menu Item Start-->
         <div class="tnit-menu-item">
           <div class="text-holder">
-            <h4>Russian</h4>
+            <h4>High Tea</h4>
             <p>Etiam aliquet arcu sit amet sodales cursus. Sed auctor lectus id diam egestas fermentum. Suspendisse et tortor posuere, facilisis eros et, laoreet ipsum. </p>
           </div>
           <figure class="tnit-menu-thumb">
             <img src="{{ asset('front/images/menu-img-03.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$65.00</span>
-            </figcaption>
           </figure>
           <a href="menu.html" class="btn-menu">View Menu</a>
         </div><!--Menu Item End-->
@@ -141,78 +125,11 @@
         <!--Menu Item Start-->
         <div class="tnit-menu-item tnit-menu-item-right">
           <div class="text-holder">
-            <h4>Italian</h4>
+            <h4>Dinner</h4>
             <p>Etiam aliquam eleifend ante, at vestibulum mauris pharetra eu. Maecenas sed risus urna. Aenean eu elit eget sem vestibulum malesuada. Vestibulum. </p>
           </div>
           <figure class="tnit-menu-thumb">
             <img src="{{ asset('front/images/menu-img-04.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$80.00</span>
-            </figcaption>
-          </figure>
-          <a href="menu.html" class="btn-menu">View Menu</a>
-        </div><!--Menu Item End-->
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <!--Menu Item Start-->
-        <div class="tnit-menu-item">
-          <div class="text-holder">
-            <h4>Asian</h4>
-            <p>Etiam aliquet arcu sit amet sodales cursus. Sed auctor lectus id diam egestas fermentum. Suspendisse et tortor posuere, facilisis eros et, laoreet ipsum. </p>
-          </div>
-          <figure class="tnit-menu-thumb">
-            <img src="{{ asset('front/images/menu-img-05.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$75.00</span>
-            </figcaption>
-          </figure>
-          <a href="menu.html" class="btn-menu">View Menu</a>
-        </div><!--Menu Item End-->
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <!--Menu Item Start-->
-        <div class="tnit-menu-item tnit-menu-item-right">
-          <div class="text-holder">
-            <h4>Chinese</h4>
-            <p>Etiam aliquet arcu sit amet sodales cursus. Sed auctor lectus id diam egestas fermentum. Suspendisse et tortor posuere, facilisis eros et, laoreet ipsum. </p>
-          </div>
-          <figure class="tnit-menu-thumb">
-            <img src="{{ asset('front/images/menu-img-06.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$65.00</span>
-            </figcaption>
-          </figure>
-          <a href="menu.html" class="btn-menu">View Menu</a>
-        </div><!--Menu Item End-->
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <!--Menu Item Start-->
-        <div class="tnit-menu-item">
-          <div class="text-holder">
-            <h4>French</h4>
-            <p>Etiam aliquet arcu sit amet sodales cursus. Sed auctor lectus id diam egestas fermentum. Suspendisse et tortor posuere, facilisis eros et, laoreet ipsum. </p>
-          </div>
-          <figure class="tnit-menu-thumb">
-            <img src="{{ asset('front/images/menu-img-07.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$82.00</span>
-            </figcaption>
-          </figure>
-          <a href="menu.html" class="btn-menu">View Menu</a>
-        </div><!--Menu Item End-->
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <!--Menu Item Start-->
-        <div class="tnit-menu-item tnit-menu-item-right">
-          <div class="text-holder">
-            <h4>Spanish</h4>
-            <p>Etiam aliquam eleifend ante, at vestibulum mauris pharetra eu. Maecenas sed risus urna. Aenean eu elit eget sem vestibulum malesuada. Vestibulum. </p>
-          </div>
-          <figure class="tnit-menu-thumb">
-            <img src="{{ asset('front/images/menu-img-08.jpg') }}" alt="">
-            <figcaption class="caption">
-              <span class="price">$90.00</span>
-            </figcaption>
           </figure>
           <a href="menu.html" class="btn-menu">View Menu</a>
         </div><!--Menu Item End-->
@@ -222,7 +139,7 @@
 </section><!--Menu Section End-->
 
 <!--Today Section Start-->
-<section class="tnit-today-section pd-t70">
+{{-- <section class="tnit-today-section pd-t70" style="display: none;">
   <div class="first-section">
     <div class="container">
         <div class="tnit-heading-outer">
@@ -262,7 +179,7 @@
         </ul>
     </div><!--Tabs Outer End-->
  </div>
-  <div class="today-middle-section">
+  <div class="today-middle-section" style="display: none">
     <div class="container">
        <!-- Tab Holder Start-->
         <div class="tab-content">
@@ -689,7 +606,7 @@
         </div><!-- Tab Holder End-->
     </div>
   </div>
-</section><!--Today Section End-->
+</section>  --}}<!--Today Section End-->
 
 
 <!--Reservation Row Start-->
@@ -727,8 +644,5 @@
      </ul><!--Top listed End-->
   </div>
 </section> <!--Reservation Row End-->
-
-
-
 
 @endsection

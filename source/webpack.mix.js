@@ -19,6 +19,8 @@ let mix = require('laravel-mix');
 
 mix.styles([
 	'resources/assets/assets-backend/bower_components/bootstrap/dist/css/bootstrap.min.css',
+	'resources/assets/assets-backend/bower_components/font-awesome/css/font-awesome.min.css',
+	'resources/assets/assets-backend/bower_components/ionicons/css/ionicons.min.css',
 	'resources/assets/assets-backend/dist/css/AdminLTE.min.css',
 	'resources/assets/assets-backend/dist/css/skins/skin-blue.min.css',
 	'resources/assets/assets-backend/css/admin-styles.css',

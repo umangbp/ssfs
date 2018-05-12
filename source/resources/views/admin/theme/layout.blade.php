@@ -10,8 +10,8 @@
   
   <link rel="stylesheet" type="text/css" href="{{ mix('admin/css/all.css') }}">
 
-  <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}">
+  {{-- <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}"> --}}
 
   
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,7 +25,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-  <script src="{{ asset('bower_components/ckeditor/ckeditor.js') }}"></script>        
+  <script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>        
 
 
 </head>
@@ -56,14 +56,25 @@
 
 <script src="{{ mix('admin/js/all.js') }}"></script>
 
-{{-- <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript">
 
-<script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+  if($('#content-editor').val() !== undefined){
+    CKEDITOR.replace( 'content-editor' );
+  }
 
-<script src="{{ asset('dist/js/adminlte.min.js') }}"></script> 
+</script>
 
+<script type="text/javascript">
 
-<script src="{{ asset('dist/js/demo.js') }}"></script>--}}
+  if($('#short_desc-editor').val() !== undefined){
+    CKEDITOR.replace('short_desc-editor');
+  }
+
+  if($('#description-editor').val() !== undefined){
+    CKEDITOR.replace('description-editor');  
+  }
+  
+</script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 
 <!--Middle Section Start-->
-<div class="ft-middle-row">
+
+{{-- <div class="ft-middle-row">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12">
@@ -100,7 +101,9 @@
     </ul><!--Socail Links End--> 
    
   </div>
-</div><!--Middle Section End-->
+</div> --}}
+
+<!--Middle Section End-->
 <!--CopyRight Row Start-->
 
 <div class="tnit-copyright-row">

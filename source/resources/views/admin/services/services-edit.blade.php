@@ -5,8 +5,8 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 	  <h1>
-		CMS
-		<small>List</small>
+		Services
+		<small>Edit</small>
 	  </h1>
 	  <ol class="breadcrumb">
 		<li><a href="{{ route('ssfs.admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -74,9 +74,6 @@
 			</div>
 		</div>
 	</section>
-<script type="text/javascript">
-	CKEDITOR.replace( 'short_desc-editor' );
-    CKEDITOR.replace( 'description-editor' );
-</script>
+
 
 @endsection

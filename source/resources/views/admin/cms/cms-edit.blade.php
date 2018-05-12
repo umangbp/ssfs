@@ -6,7 +6,7 @@
 	<section class="content-header">
 	  <h1>
 		CMS
-		<small>List</small>
+		<small>Edit</small>
 	  </h1>
 	  <ol class="breadcrumb">
 		<li><a href="{{ route('ssfs.admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -76,8 +76,6 @@
 			</div>
 		</div>
 	</section>
-<script type="text/javascript">
-    CKEDITOR.replace( 'content-editor' );
-</script>
+
 
 @endsection
