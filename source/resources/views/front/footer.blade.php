@@ -1,7 +1,7 @@
 
 <!--Middle Section Start-->
 
-{{-- <div class="ft-middle-row">
+<div class="ft-middle-row">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12">
@@ -101,7 +101,7 @@
     </ul><!--Socail Links End--> 
    
   </div>
-</div> --}}
+</div>
 
 <!--Middle Section End-->
 <!--CopyRight Row Start-->
@@ -110,7 +110,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-6 col-xs-12">
-              <p>Copyright © 2017 - <span>Food Notch</span> - All rights reserved. Designed by <a href="https://www.topnotchinv.com/">TNIT</a></p>
+              <p>Copyright © {{ \Carbon\Carbon::now()->format('Y') }} - <span>SSFS</span> - All rights reserved.</p>
             </div>
         </div>
     </div>

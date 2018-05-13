@@ -69,3 +69,13 @@ header .navbar-default .navbar-toggle:focus {
 .tnit-menu-section{
     background: url('/front/images/home_page/menu-bg-img.jpg') top center no-repeat !important;
 }
+
+.tnit-our-clients-section{
+	float: left;
+	width: 100%;
+	background-color: #f5f5f5;
+}
+
+.ft-middle-row{
+	background: url('/front/images/footer.webp') !important;
+}

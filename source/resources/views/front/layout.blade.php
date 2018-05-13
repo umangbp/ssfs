@@ -57,6 +57,15 @@
         <script src="{{ mix('front/js/all.js') }}"></script>
         <script src="{{ asset('front/js/script.js') }}"></script>
 
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+
+                $('#our_clients_slider').owlCarousel();
+
+            });
+
+        </script>
 
 	</body>
 </html>
