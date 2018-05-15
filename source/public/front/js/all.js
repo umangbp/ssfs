@@ -5006,3 +5006,4 @@ var s=this,n=this.tabs.eq(e),o=n.find(".ui-tabs-anchor"),a=this._getPanelForTab(
     });
 
 }(document, window, window.jQuery));
+

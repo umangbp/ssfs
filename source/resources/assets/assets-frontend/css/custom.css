@@ -79,3 +79,17 @@ header .navbar-default .navbar-toggle:focus {
 .ft-middle-row{
 	background: url('/front/images/footer.webp') !important;
 }
+
+.item{
+	height: 200px;
+	background-color:red;
+
+}
+
+.item > * {
+	vertical-align: middle;
+}
+
+/**
+ * Slider
+ */

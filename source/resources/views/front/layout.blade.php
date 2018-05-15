@@ -61,8 +61,31 @@
             
             $(document).ready(function(){
 
-                $('#our_clients_slider').owlCarousel();
-
+                $('#our_clients_slider').owlCarousel({
+                    loop:true,
+                    margin:10,
+                    responsiveClass:true,
+                    responsive:{
+                        0:{
+                            items:1,
+                         
+                            loop:true
+                        },
+                        600:{
+                            items:2,
+                            
+                            loop:true
+                        },
+                        1000:{
+                            items:2,
+                            loop:false
+                        },
+                        1300:{
+                            items:4,
+                            loop:false
+                        }
+                    }
+                });
             });
 
         </script>

@@ -44,6 +44,7 @@ mix.styles([
 	'resources/assets/assets-frontend/css/style.css',
 	'resources/assets/assets-frontend/css/bootstrap.css',
 	'resources/assets/assets-frontend/css/owl-carousel.css',
+	'resources/assets/assets-frontend/css/owl.theme.default.min.css',
 	'resources/assets/assets-frontend/css/theme-color.css',
 	'resources/assets/assets-frontend/css/responsive.css',
 	'resources/assets/assets-frontend/css/jquery-ui.min.css',
@@ -64,5 +65,6 @@ mix.scripts([
 	'resources/assets/assets-frontend/js/modernizr.custom.js',
 	'resources/assets/assets-frontend/js/jquery-ui.min.js',
 	'resources/assets/assets-frontend/js/jquery.fancybox.js',
+	'resources/assets/assets-frontend/js/custom.js',
 	//'resources/assets/assets-frontend/js/js/script.js',
 ],'public/front/js/all.js').version();

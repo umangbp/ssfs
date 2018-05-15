@@ -77,25 +77,35 @@
 <!--Menu Section Start-->
 <section class="tnit-our-clients-section pd-tb70">
   
-    <div class="tnit-heading-outer">
+    <div class="tnit-heading-outer" style="float: none;">
       <h2>Our Clients</h2>
       <span>-  Some of our esteemed clients in the showcase   -</span>
     </div>
-    <div class="row">
-      <div id="our_clients_slider" class="owl-carousel">
-          <div>
-            <img src="{{ asset('front/images/our_clients/AurionPro-Logo.png') }}">
-          </div>
-          <div>
-            <img src="{{ asset('front/images/our_clients/AurionPro-Logo.png') }}">
-          </div>
-          <div>
-            <img src="{{ asset('front/images/our_clients/AurionPro-Logo.png') }}">
-          </div>
-          <div>
-            <img src="{{ asset('front/images/our_clients/AurionPro-Logo.png') }}">
-          </div>
-      </div>
+    <div id="our_clients_slider" class="owl-carousel">
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/AurionPro-Logo.png') }}">
+        </div>
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/blue_box.png') }}">
+        </div>
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/cntrls.png') }}">
+        </div>
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/new_gen.svg') }}">
+        </div>
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/power_hf.png') }}">
+        </div>
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/techflow.png') }}">
+        </div>
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/vautid_shah.png') }}">
+        </div>
+        <div class="item">
+          <img src="{{ asset('front/images/our_clients/vishal_shipping.jpg') }}">
+        </div>
     </div>
 
 </section><!--Menu Section End-->
