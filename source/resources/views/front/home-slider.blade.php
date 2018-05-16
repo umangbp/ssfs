@@ -7,7 +7,7 @@
             <!--Banner Caption Start-->
              <div class="banner-caption">
                 <div class="container">
-                    <h2>SHREE SHRADDHA FOODS SERVICES</h2>
+                    <h2>SAI SHRADDHA FOODS SERVICES</h2>
                      <strong>Taste Of Your Choice</strong>
                      <a href="#" class="tnit-btn tnit-btn-lg tnit-btn_v1">Contact Us</a>
                 </div>

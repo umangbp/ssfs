@@ -14,40 +14,48 @@
                    <div class="top-inner">
                        <div class="row">
                            <div class="col-md-6 col-sm-6 col-xs-12">
-                               <span class="welcome">Welcome To <a href="#">Shree Shraddha Foods Services.</a></span>
+                               <span class="welcome">Welcome To <a href="#">{{ $headerData['company_name'] }}</a></span>
                            </div>
                        </div>
                    </div>
 
                    <!--Top listed Start-->
                    <ul class="tnit-top-listed">
+
+                      @if(!empty($headerData['contact_number']))
                        <li class="listed-inner">
                             <span class="icon-box">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </span>
                            <div class="text">
-                                <p><a href="tel:8000000000">800-000-00-00</a></p>
+                                <p><a href="tel:{{ $headerData['contact_number'] }}">{{ $headerData['contact_number'] }}</a></p>
                                <span>Call Us</span>
                            </div>
                        </li>
+                       @endif
+
+                       @if(!empty($headerData['contact_email']))
+                       <li class="listed-inner">
+                            <span class="icon-box">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                           <div class="text">
+                               <p><a href="mailto:{{ $headerData['contact_email'] }}">{{ $headerData['contact_email'] }}</a></p>
+                               <span>Email Us</span>
+                           </div>
+                       </li>
+                       @endif
+
+                       @if(!empty($headerData['short_address']))
                        <li class="listed-inner">
                             <span class="icon-box">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </span>
                            <div class="text">
-                                <p>9311 Sherman Ave.</p>
-                               <span>Groton, CT 06340</span>
+                               {!! $headerData['short_address'] !!}
                            </div>
                        </li>
-                       <li class="listed-inner">
-                            <span class="icon-box">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                            </span>
-                           <div class="text">
-                               <p>11:00 am - 01:00 pm</p>
-                               <span>Opening Hours</span>
-                           </div>
-                       </li>
+                       @endif
                    </ul><!--Top listed End-->
 
                </div><!--Top Row End-->
@@ -70,18 +78,16 @@
                 <div class="collapse navbar-collapse" id="tnit-navbar-collapse">
                   <ul class="nav navbar-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    {{-- <li><a href="gallery.html">Gallery</a></li> --}}
-                   {{--  <li><a href="team.html">Our Team</a></li> --}}
-                    <li class="dropdown"> <a href="menu.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our Menu <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <li class="dropdown"> <a href="menu.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="menu-daily.html">Daily Menu</a></li>
                         <li><a href="menu.html">Our Menu</a></li>
                       </ul>
                     </li>
-                   {{--  <li><a href="blog.html">Blog </a></li> --}}
-                    <li><a href="contact.html">Careers</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html">Careers</a></li>
+                    
                     {{-- <li class="tnit-search-outer">
                         <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
                     </li>  --}}

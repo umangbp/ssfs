@@ -14,11 +14,8 @@
       <div class="col-md-7 col-sm-7 col-xs-12">
         <!--About Text start-->
         <div class="tnit-about-text">
-          <h2>What Is Shree Shraddha Foods Services?</h2>
-          {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet turpis ex. Vestibulum commodo eget ipsum id mollis. Mauris maximus, diam id euismod egestas, justo orci molestie massa, sed accumsan eros ipsum sollicitudin quam.</p>
-          <p>Ut est ligula, ullamcorper a imperdiet a, ullamcorper eget quam. Nulla luctus sagittis tellus, in suscipit turpis pharetra fermentum. Fusce in ornare ex. Suspendisse eu mollis ligula, ut aliquam sapien. Donec aliquam rhoncus feugiat.</p> --}}
-
-          {!! $content['about_us']->content !!}
+          <h2>What Is Sai Shraddha Foods Services?</h2>
+          {!! $content['cms']['home_about_us'] !!}
           <div class="bottom-holder">
             <a href="about.html" class="tnit-btn tnit-btn_v1">Read More</a>
             <span class="signature"></span>
@@ -81,33 +78,34 @@
       <h2>Our Clients</h2>
       <span>-  Some of our esteemed clients in the showcase   -</span>
     </div>
-    <div id="our_clients_slider" class="owl-carousel">
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/AurionPro-Logo.png') }}">
-        </div>
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/blue_box.png') }}">
-        </div>
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/cntrls.png') }}">
-        </div>
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/new_gen.svg') }}">
-        </div>
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/power_hf.png') }}">
-        </div>
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/techflow.png') }}">
-        </div>
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/vautid_shah.png') }}">
-        </div>
-        <div class="item">
-          <img src="{{ asset('front/images/our_clients/vishal_shipping.jpg') }}">
-        </div>
+    <div>
+      <div id="our_clients_slider" class="owl-carousel">
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/AurionPro-Logo.png') }}">
+          </div>
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/blue_box.png') }}">
+          </div>
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/cntrls.png') }}">
+          </div>
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/new_gen.svg') }}">
+          </div>
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/power_hf.png') }}">
+          </div>
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/techflow.png') }}">
+          </div>
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/vautid_shah.png') }}">
+          </div>
+          <div class="clients-item">
+            <img src="{{ asset('front/images/our_clients/vishal_shipping.jpg') }}">
+          </div>
+      </div>
     </div>
-
 </section><!--Menu Section End-->
 
 
@@ -116,33 +114,41 @@
   <div class="container">
     <!--Top listed Start-->
      <ul class="tnit-top-listed tnit-top-listed_v2">
-         <li class="listed-inner">
+
+        @if(!empty($headerData['contact_number']))
+        <li class="listed-inner">
               <span class="icon-box">
                   <i class="fa fa-phone" aria-hidden="true"></i>
               </span>
              <div class="text">
                  <span>Reach Us by phone at number below:</span>
-                 <p><a href="tel:8000000000">800-000-00-00</a></p>
+                 <p><a href="tel:{{ $headerData['contact_number'] }}">{{ $headerData['contact_number'] }}</a></p>
              </div>
-         </li>
+        </li>
+        @endif
+
+        @if(!empty($headerData['contact_email']))
          <li class="listed-inner">
               <span class="icon-box">
                   <i class="fa fa-envelope-open" aria-hidden="true"></i>
               </span>
              <div class="text">
                  <span>Reach Us by email below: </span>
-                 <p><a href="mailto:email@foodnotch.com">email@foodnotch.com</a></p>
+                 <p><a href="mailto:{{ $headerData['contact_email'] }}">{{ $headerData['contact_email'] }}</a></p>
              </div>
          </li>
-         <li class="listed-inner">
+         @endif
+
+        @if(!empty($headerData['short_address']))
+        <li class="listed-inner">
               <span class="icon-box">
-                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
               </span>
              <div class="text">
-                <span>07:00 am - 11:00 am ( Breakfast )</span>
-                <p>11:00 am - 01:00 am ( Lunch / Dinner )</p>
-             </div>
-         </li>
+               {!! $headerData['short_address'] !!}
+           </div>
+        </li>
+        @endif
      </ul><!--Top listed End-->
   </div>
 </section> <!--Reservation Row End-->

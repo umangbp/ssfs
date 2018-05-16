@@ -68,21 +68,19 @@
                     responsive:{
                         0:{
                             items:1,
-                         
                             loop:true
                         },
                         600:{
                             items:2,
-                            
                             loop:true
                         },
                         1000:{
                             items:2,
-                            loop:false
+                            loop:true
                         },
                         1300:{
                             items:4,
-                            loop:false
+                            loop:true
                         }
                     }
                 });
