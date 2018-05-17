@@ -4,7 +4,7 @@
 <div class="ft-middle-row">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-4 col-sm-8 col-xs-12">
         <!--Widget Start-->
         <div class="widget widget-about">
           <strong class="ft-logo">
@@ -15,49 +15,45 @@
           <ul class="about-info-listed">
             <li>
               <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <p>PO Box 97542  NY 8007 United States</p>
+              <p class="footer-address">{!! $headerData['full_address'] !!}</p>
             </li>
-            <li>
+            <li style="margin-top: 5px;">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <p>
-                <span><a href="tel:00123456789">+ (00) 123 456 789</a></span>
-              
+                <span><a href="tel:{{ $headerData['contact_number'] }}">{{ $headerData['contact_number'] }}</a></span>
               </p>
             </li>
             <li>
               <i class="fa fa-envelope" aria-hidden="true"></i>
-              <p><a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+              <p><a href="mailto:{{ $headerData['contact_email'] }}">{{ $headerData['contact_email'] }}</a></p>
             </li>
           </ul>
         </div><!--Widget End-->
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-4 col-sm-8 col-xs-12">
         <!--Widget Start-->
         <div class="widget widget-links">
           <h4>Footer Links</h4>
           <ul class="ft-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog </a></li>
-            <li><a href="menu.html">Menu </a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('about-us') }}">About</a></li>
+            <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+            <li><a href="{{ route('careers') }}">Careers</a></li>
           </ul>
         </div><!--Widget End-->
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="col-md-4 col-sm-8 col-xs-12">
         <!--Widget Start-->
         <div class="widget widget-links">
-          <h4>Footer Links</h4>
+          <h4>Our Services</h4>
           <ul class="ft-nav">
-            <li><a href="#">American</a></li>
-            <li><a href="#">Italian</a></li>
-            <li><a href="#">Asian</a></li>
-            <li><a href="#">Chinies</a></li>
-            <li><a href="#">Spanish</a></li>
+            @foreach($headerData['services'] as $service)
+              <li><a href="{{ route('service',$service['url']) }}">{{ $service['title'] }}</a></li>
+            @endforeach
           </ul>
         </div><!--Widget End-->
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
+ {{--      <div class="col-md-3 col-sm-6 col-xs-12">
         <!--Widget Start-->
         <div class="widget widget-payment">
           <h4>Payment Methods</h4>
@@ -79,7 +75,7 @@
             </li>
           </ul>
         </div><!--Widget End-->
-      </div>
+      </div> --}}
     </div>
 
     <ul class="tnit-social-links tnit-social-links_v3">

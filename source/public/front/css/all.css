@@ -18549,6 +18549,27 @@ header .navbar-default .navbar-toggle:focus {
 	text-transform: none;
 }
 
-/**
- * Slider
- */
+.footer-address{
+	line-height: 12px !important;
+}
+
+.about-info-listed li{
+
+}
+
+.ft-logo{
+	margin-bottom: 30px !important;
+}
+
+.ft-middle-row > .container > .row > .col-md-4:first-child {
+    border-left: 1px solid #88817d;
+}
+
+.ft-middle-row > .container > .row > .col-md-4 {
+    border-right: 1px solid #88817d;
+    border-bottom: 1px solid #88817d;
+}
+
+.widget-about .about-info-listed {
+    padding-left: 86px !important;
+}

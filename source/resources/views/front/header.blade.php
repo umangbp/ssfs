@@ -80,27 +80,20 @@
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown"> <a href="menu.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="menu-daily.html">Daily Menu</a></li>
-                        <li><a href="menu.html">Our Menu</a></li>
+
+                        @foreach($headerData['services'] as $service)
+                          <li><a href="{{ route('service',$service['url']) }}">{{ $service['title'] }}</a></li>
+                        @endforeach
+                        
                       </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="contact.html">Careers</a></li>
-                    
-                    {{-- <li class="tnit-search-outer">
-                        <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                    </li>  --}}
                   </ul>
                 </div>
                 <!-- /.navbar-collapse --> 
               </nav>
-              {{-- <ul class="tnit-nav-right">
-                <li class="register-list">
-                    <a href="#" class="btn-register">Reservation</a>
-                </li>
-                
-              </ul> --}}
         </div><!--Nav Holder End-->
     </div>
 </div><!--Navigation Row End-->

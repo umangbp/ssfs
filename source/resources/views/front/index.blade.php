@@ -47,8 +47,8 @@
           
         <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="tnit-services-item">
+          <a href="{{ route('service', $service->url) }}">
           <span class="icon-box">
-
             @if($key == 0)
               <i class="icomoon icon-food"></i>
             @elseif($key == 1)
@@ -58,9 +58,9 @@
             @else
               <i class="icomoon icon-hot-coffee-rounded-cup-on-a-plate-from-side-view"></i>
             @endif
-            
           </span>
-          <h4>{{ $service->title }}</h4>
+          </a>
+          <h4><a href="{{ route('service', $service->url) }}">{{ $service->title }}</a></h4>
           <p>{{ strip_tags($service->short_desc) }}</p>
         </div>
       </div>

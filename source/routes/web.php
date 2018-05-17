@@ -62,8 +62,15 @@ Route::middleware(['check.login'])->group(function () {
  * ****************************Front Route**********************************
  */
 
+	Route::get('service/{name}', 'Site\SiteController@loadServicePage')->name('service');
 
-	Route::get('/','Site\SiteController@loadHomePage');
+	Route::get('about-us', 'Site\SiteController@loadAboutUsPage')->name('about-us');
+
+	Route::get('contact-us', 'Site\SiteController@loadContactUsPage')->name('contact-us');
+
+	Route::get('careers', 'Site\SiteController@loadCareersPage')->name('careers');
+
+	Route::get('/','Site\SiteController@loadHomePage')->name('home');
 
 
 /**
