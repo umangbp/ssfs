@@ -87,9 +87,9 @@
                         
                       </ul>
                     </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="contact.html">Careers</a></li>
+                    <li><a href="{{ route('about-us') }}">About Us</a></li>
+                    <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                    <li><a href="{{ route('careers') }}">Careers</a></li>
                   </ul>
                 </div>
                 <!-- /.navbar-collapse --> 

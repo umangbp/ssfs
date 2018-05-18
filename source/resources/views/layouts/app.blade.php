@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'SSFS') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('admin/css/all.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -38,6 +38,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('admin/js/all.js') }}"></script>
 </body>
 </html>

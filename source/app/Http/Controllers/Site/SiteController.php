@@ -70,6 +70,15 @@ class SiteController extends Controller
      */
     public function loadAboutUsPage(){
 
+        $about_us = CMS::where('slug','about-us')->select('id','slug','title','content')->first();
+
+        if(!empty($about_us)){
+            return view('front.about')->with('headerData', $this->fetchHeaderData())
+                                      ->with('about_us', $about_us);
+        }   
+        else{
+            print_r('content not found');die;
+        }
     }
 
     /**
@@ -77,7 +86,7 @@ class SiteController extends Controller
      * @return 
      */
     public function loadContactUsPage(){
-
+        return view('front.contact');
     }
 
     /**
@@ -85,7 +94,7 @@ class SiteController extends Controller
      * @return 
      */
     public function loadCareersPage(){
-
+        return view('front.careers');
     }
 
     /**

@@ -124,3 +124,50 @@ header .navbar-default .navbar-toggle:focus {
 .widget-about .about-info-listed {
     padding-left: 86px !important;
 }
+
+.our-values{
+	padding-top: 5%;
+}
+
+
+.our-vision-list ul {
+  list-style: none;
+  padding: 0;
+}
+.our-vision-list li {
+  padding-left: 1.3em;
+  padding-top: 10px;
+}
+
+
+
+.our-vision-list li:before {
+  content: "\f00c"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+.our-vision-list li span{
+	font-weight: 600;
+}
+
+
+
+.our-vision-dropdown-content{
+	padding: 10px 10px 10px 20px;
+	text-align: justify;
+}
+
+.our-values-section{
+	padding: 10px 0 20px 0;
+}
+
+.about-us-main{
+	padding: 15px;
+}
+
+.about-us-desc{
+	text-align: justify;
+}

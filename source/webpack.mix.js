@@ -66,5 +66,7 @@ mix.scripts([
 	'resources/assets/assets-frontend/js/jquery-ui.min.js',
 	'resources/assets/assets-frontend/js/jquery.fancybox.js',
 	'resources/assets/assets-frontend/js/custom.js',
+	'resources/assets/assets-frontend/js/waypoints.min.js',
+	'resources/assets/assets-frontend/js/jquery.counterup.min.js',
 	//'resources/assets/assets-frontend/js/js/script.js',
 ],'public/front/js/all.js').version();

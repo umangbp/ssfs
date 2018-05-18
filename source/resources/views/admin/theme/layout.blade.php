@@ -59,7 +59,7 @@
 <script type="text/javascript">
 
   if($('#content-editor').val() !== undefined){
-    CKEDITOR.replace( 'content-editor' );
+    CKEDITOR.replace( 'content-editor' ).config.allowedContent = true;;
   }
 
 </script>
@@ -67,11 +67,11 @@
 <script type="text/javascript">
 
   if($('#short_desc-editor').val() !== undefined){
-    CKEDITOR.replace('short_desc-editor');
+    CKEDITOR.replace('short_desc-editor').config.allowedContent = true;;
   }
 
   if($('#description-editor').val() !== undefined){
-    CKEDITOR.replace('description-editor');  
+    CKEDITOR.replace('description-editor').config.allowedContent = true;;  
   }
   
 </script>
