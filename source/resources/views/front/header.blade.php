@@ -52,7 +52,7 @@
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </span>
                            <div class="text">
-                               {!! $headerData['short_address'] !!}
+                               {!! str_replace('%tag_name%','p',$headerData['short_address']) !!}
                            </div>
                        </li>
                        @endif
@@ -77,7 +77,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="tnit-navbar-collapse">
                   <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about-us') }}">About Us</a></li>
                     <li class="dropdown"> <a href="menu.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                       <ul class="dropdown-menu">
 
@@ -87,7 +88,6 @@
                         
                       </ul>
                     </li>
-                    <li><a href="{{ route('about-us') }}">About Us</a></li>
                     <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                     <li><a href="{{ route('careers') }}">Careers</a></li>
                   </ul>

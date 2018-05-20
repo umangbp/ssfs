@@ -880,7 +880,7 @@ Innner Css
 
 
 #tnit-contact-banner{
-    background: url(../images/inner-banner-contact-img.jpg) top center no-repeat;
+    background: url(/front/images/inner-banners/inner-banner-contact-us.webp) top center no-repeat;
     background-size: cover;
 }
 

@@ -70,11 +70,18 @@ class SiteController extends Controller
      */
     public function loadAboutUsPage(){
 
-        $about_us = CMS::where('slug','about-us')->select('id','slug','title','content')->first();
+        $about_us = CMS::whereIn('slug',['about-us','about-us-vision'])->select('id','slug','title','content')->get();
 
         if(!empty($about_us)){
+
+            $about_us_content = [];
+
+            foreach ($about_us as $key => $value) {
+                $about_us_content[$value->slug] = $value;
+            }
+
             return view('front.about')->with('headerData', $this->fetchHeaderData())
-                                      ->with('about_us', $about_us);
+                                      ->with('about_us', $about_us_content);
         }   
         else{
             print_r('content not found');die;
@@ -86,7 +93,24 @@ class SiteController extends Controller
      * @return 
      */
     public function loadContactUsPage(){
-        return view('front.contact');
+
+        $contact_us_page = CMS::whereIn('slug', ['contact-us','short_address'])->get();
+
+
+        if(!empty($contact_us_page)){
+
+            $contact_us_data = [];
+
+            foreach ($contact_us_page as $key => $data) {
+                $contact_us_data[$data->slug] = $data; 
+            }
+
+            return view('front.contact')->with('headerData', $this->fetchHeaderData())
+                                        ->with('contact_us_data', $contact_us_data);
+        }
+        else{
+            print_r('content not found');die;
+        }
     }
 
     /**
@@ -108,8 +132,10 @@ class SiteController extends Controller
         try {
 
             // fetching contect info
-            $contactInfo = Settings::whereIn('name', ['contact_email', 'contact_number', 'company_name'])->select('id', 'name', 'value')->get();
+            $contactInfo = Settings::whereIn('name', ['contact_email', 'contact_number', 'company_name','happy_clients_count','people_catered_count','receipes_count','whatsapp_number'])->select('id', 'name', 'value')->get();
+            
             $cms = CMS::whereIn('slug',['short_address','full_address'])->select('slug','title','content')->get();
+
             $services = Services::select('id', 'title','url','short_desc', 'description', 'position')->orderBy('position')->get()->toArray();
 
 
