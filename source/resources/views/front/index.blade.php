@@ -45,7 +45,7 @@
 
       @foreach ($content['services'] as $key => $service)
           
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="tnit-services-item">
           <a href="{{ route('service', $service->url) }}">
           <span class="icon-box">
@@ -145,7 +145,7 @@
                   <i class="fa fa-map-marker" aria-hidden="true"></i>
               </span>
              <div class="text">
-               {!! $headerData['short_address'] !!}
+               {!! str_replace('%tag_name%','span',$headerData['short_address']) !!}
            </div>
         </li>
         @endif

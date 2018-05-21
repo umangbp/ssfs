@@ -23,8 +23,6 @@
 
 @section('main-content')
 	 
-<!--Main Content Start-->
-<div class="tnit-main-content">
     <!--About Section Start-->
     <section class="tnit-about-section tnit-about-section_v2 pd-tb70">
         <div class="container">
@@ -143,6 +141,5 @@
         </div>
       </div>
     </section><!--Stats Section End-->    
-</div><!--Main Content End-->
 
 @endsection

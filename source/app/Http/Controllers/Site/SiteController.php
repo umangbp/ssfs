@@ -51,7 +51,7 @@ class SiteController extends Controller
 
             }
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             
         }
     }
@@ -62,6 +62,26 @@ class SiteController extends Controller
      * @return view   service
      */
     public function loadServicePage($name){
+
+
+        try {
+
+            $service = Services::where('url',$name)->select('id','title','url','description', 'image')->first();
+
+            if(!empty($service)){
+
+                $service->image = url('front/images/services/'.$service->image);
+
+                return view('front.service')->with('service_details', $service)
+                                            ->with('headerData', $this->fetchHeaderData());
+            }
+            else{
+                echo 'page-not-found';
+            }
+
+        } catch (\Exception $e) {
+            print_r($e);
+        }
 
     }
 
@@ -158,7 +178,7 @@ class SiteController extends Controller
 
             }
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             
         }
     }

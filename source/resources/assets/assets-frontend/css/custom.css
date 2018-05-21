@@ -171,3 +171,70 @@ header .navbar-default .navbar-toggle:focus {
 .about-us-desc{
 	text-align: justify;
 }
+
+.tnit-service-section {
+    float: left;
+    width: 100%;
+    background-color: #f5f5f5;
+    position: relative;
+    z-index: 99;
+}
+
+.tnit-service-thumb{
+	
+}
+
+.tnit-service-thumb img{
+	max-width: 100%;
+	height: auto;
+}
+
+.service-image{
+	float: left;
+	text-align:justify !important;
+	padding-right: 2%;
+}
+
+.service-description{
+	text-align: justify;
+
+}
+
+.pd-top-30{
+	padding-top:30px;
+}
+
+.service-bullets{
+	padding-top:20px;
+	padding-left:20px;
+}
+
+.service-bullets ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-bullets li:before {
+  content: "\f00c"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+.service-bullets ul li{
+	padding-bottom:20px;
+}
+
+
+@media screen and (max-width:768px) {
+   
+   .service-image{
+   	padding-bottom:20px;
+   }
+
+   .text p{
+   	font-size: 14px;
+   }
+
+}

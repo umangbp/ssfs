@@ -6,14 +6,8 @@
     <div class="tnit-inner-banner" id="tnit-about-banner">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 col-sm-3 col-xs-12">
-            <a href="{{ route('home') }}" class="tnit-btn tnit-btn_v2 pull-left"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Go Back</a>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <h2>About Us</h2>
-          </div>
-          <div class="col-md-4 col-sm-3 col-xs-12">
-            
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h2>{{ $service_details->title }}</h2>
           </div>
         </div>
       </div>
@@ -24,5 +18,21 @@
 
 @section('main-content')
 
+<section class="tinit-service-section pd-tb70">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="service-image">
+            <figure class="tnit-service-thumb">
+                 <img class="image-responsive" src="{{ $service_details->image }}" alt="{{ $service_details->title }}">
+            </figure>  
+          </div>
+          <div class="service-description">
+              {!! $service_details->description !!}
+            </div>
+        </div>
+    </div>
+  </div>
+</section>  
 
 @endsection
