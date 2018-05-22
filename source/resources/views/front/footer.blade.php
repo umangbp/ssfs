@@ -7,27 +7,31 @@
       <div class="col-md-4 col-sm-8 col-xs-12">
         <!--Widget Start-->
         <div class="widget widget-about">
+          <div>
           <strong class="ft-logo">
             <a href="index.html">
-              <img src="{{ asset('front/images/ft-logo.png') }}" alt="">
+              <img src="{{ asset('front/images/SSFS_LOGO.png') }}" height= "113" alt="">
             </a>
           </strong>
-          <ul class="about-info-listed">
-            <li>
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <p class="footer-address">{!! $headerData['full_address'] !!}</p>
-            </li>
-            <li style="margin-top: 5px;">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <p>
-                <span><a href="tel:{{ $headerData['contact_number'] }}">{{ $headerData['contact_number'] }}</a></span>
-              </p>
-            </li>
-            <li>
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <p><a href="mailto:{{ $headerData['contact_email'] }}">{{ $headerData['contact_email'] }}</a></p>
-            </li>
-          </ul>
+          </div>
+          <div>
+            <ul class="about-info-listed">
+              <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <p class="footer-address">{!! $headerData['full_address'] !!}</p>
+              </li>
+              <li style="margin-top: 5px;">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <p>
+                  <span><a href="tel:{{ $headerData['contact_number'] }}">{{ $headerData['contact_number'] }}</a></span>
+                </p>
+              </li>
+              <li>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <p><a href="mailto:{{ $headerData['contact_email'] }}">{{ $headerData['contact_email'] }}</a></p>
+              </li>
+            </ul>
+          </div>
         </div><!--Widget End-->
       </div>
       <div class="col-md-4 col-sm-8 col-xs-12">

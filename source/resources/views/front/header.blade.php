@@ -5,7 +5,7 @@
             <div class="col-md-4 col-sm-3 col-xs-12">
                 <!--Logo Start-->
                 <strong class="tnit-logo">
-                    <a href="index.html"><img src="{{ asset('front/images/logo.jpg') }}" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('front/images/SSFS_LOGO.png') }}" height="167" alt=""></a>
                 </strong><!--Logo End-->
             </div>
             <div class="col-md-8 col-sm-9 col-xs-12">

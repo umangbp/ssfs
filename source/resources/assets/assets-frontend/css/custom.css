@@ -122,7 +122,8 @@ header .navbar-default .navbar-toggle:focus {
 }
 
 .widget-about .about-info-listed {
-    padding-left: 86px !important;
+    padding-left: 0px !important;
+    display: inline-block;
 }
 
 .our-values{
@@ -237,4 +238,7 @@ header .navbar-default .navbar-toggle:focus {
    	font-size: 14px;
    }
 
+   .about-info-listed{
+   	
+   }
 }
