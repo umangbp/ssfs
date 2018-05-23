@@ -48,11 +48,11 @@ class SiteController extends Controller
                 return view('front.index')->with('content', $content)->with('headerData', $this->fetchHeaderData());
             }
             else{
-
+                echo "something went wrong.";
             }
 
         } catch (\Exception $e) {
-            
+            echo "Exception Occured";
         }
     }
 

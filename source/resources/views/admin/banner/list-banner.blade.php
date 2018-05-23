@@ -5,12 +5,12 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 	  <h1>
-	    CMS
+	    Banner
 	    <small>List</small>
 	  </h1>
 	  <ol class="breadcrumb">
 	    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-	    <li><a href="#">CMS</a></li>
+	    <li><a href="#">Banners</a></li>
 	  </ol>
 	</section>
 
@@ -33,48 +33,50 @@
               	<thead>
 	              	<tr>
 	              		<th>#</th>
-	              		<th>Slug</th>
-	              		<th>Title</th>
-	              		<th>Content</th>
-	              		<th>Last Updated</th>
+	              		<th>Banner Text</th>
+	              		<th>Sub Text</th>
+	              		<th>Image</th>
+	              		<th>Sequence No</th>
+	              		<th>status</th>
 	              		<th>Actions</th>
 	              	</tr>
               	</thead>
               	
               	<tbody>
 
-	              	@isset($cms_pages)
+	              	@isset($banners)
 
-	              		@foreach($cms_pages as $cms_page)
+	              		@foreach($banners as $banner)
 
 	              			<tr>
-	              				<td>{{ $cms_page['id'] }}</td>
-	              				<td>{{ $cms_page['slug'] }}</td>
-	              				<td>{{ $cms_page['title'] }}</td>
-	              				<td><?php echo mb_strimwidth(strip_tags($cms_page['content']),0,100,'...'); ?></td>
-	              				<td>{{ $cms_page['updated_at'] }}</td>
-	              				<td><a class="btn btn-info" href="{{ URL('ssfs-admin/cms/'.$cms_page['id']) }}"><i class="fa fa-edit"></a></td>
+	              				<td>{{ $banner->id }}</td>
+	              				<td>{{ $banner->banner_text }}</td>
+	              				<td>{{ $banner->banner_sub_text }}</td>
+	              				<td class="text-center"><img src="{{ $banner->banner_image }}" width="150px" height="80px" /></td>
+	              				<td>{{ $banner->sequence_no }}</td>
+	              				<td>{{ $banner->status }}</td>
+	              				<td><a class="btn btn-info" href="{{ URL('ssfs-admin/banners/'.$banner->id) }}"><i class="fa fa-edit"></a></td>
 	              			</tr>
 	              		@endforeach
 
 	              	@endisset
 
-	              	@empty($cms_pages)
+	              	@empty($banners)
 	              			<tr>
-	              				<td  colspan="5" class="text-center"><span>No CMS Content Available</span></td>
+	              				<td  colspan="5" class="text-center"><span>No Banner Available</span></td>
 	              			</tr>
 	              	@endempty
               	
               	</tbody>
               </table>
-              <!-- /CMS Listing table -->  
+              
             </div>
           </div>
-          <!-- /.box -->
+
         </div>
-        <!-- /.col-->
+       
       </div>
-      <!-- ./row -->
+    
     </section>
 
 @endsection

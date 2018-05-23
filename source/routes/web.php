@@ -50,6 +50,11 @@ Route::middleware(['check.login'])->group(function () {
 	Route::get('ssfs-admin/services/{id}', 'ServicesController@edit')->name('services.edit');
 	Route::put('ssfs-admin/services/{id}', 'ServicesController@update')->name('services.update');
 
+	Route::get('ssfs-admin/banners', 'BannerController@index')->name('banners.list');
+	Route::get('ssfs-admin/banners', 'BannerController@create')->name('banners.create');
+	Route::post('ssfs-admin/banners', 'BannerController@store')->name('banners.store');
+	Route::get('ssfs-admin/banners', 'BannerController@edit')->name('banners.edit');
+	Route::put('ssfs-admin/banners', 'BannerController@update')->name('banners.update');
 });
 
 
