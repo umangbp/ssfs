@@ -156,4 +156,20 @@ class CMSController extends Controller
         return redirect('ssfs-admin/settings')->with('message', 'Settings updated successfully');
     }
 
+    /**
+     * Function to load dashboard
+     * @return [type] [description]
+     */
+    public function loadDashboard(){
+        return view('admin.theme.index');
+    }
+
+    /**
+     * Function to load 404 not found page
+     * @return [type] [description]
+     */
+    public function loadNotFoundPage(){
+        return view('admin.theme.404-page');
+    }
+
 }

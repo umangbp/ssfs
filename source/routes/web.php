@@ -29,16 +29,12 @@ Route::post('ssfs-admin/password/email', 'Auth\ForgotPasswordController@sendRese
 Route::get('ssfs-admin/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('ssfs-admin/password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('ssfs-admin/not-found', function(){
-	return view('admin.theme.404-page');
-})->name('not-found');
+Route::get('ssfs-admin/not-found', 'CMSController@loadNotFoundPage')->name('not-found');
 
 Route::middleware(['check.login'])->group(function () {
 
 
-	Route::get('ssfs-admin/', function () {
-    	return view('admin.theme.index');
-	})->name('ssfs.admin.dashboard');
+	Route::get('ssfs-admin/', 'CMSController@loadDashboard')->name('ssfs.admin.dashboard');
 
 
 	Route::get('ssfs-admin/cms', 'CMSController@index')->name('cms');
@@ -59,6 +55,14 @@ Route::middleware(['check.login'])->group(function () {
 
 	Route::get('ssfs-admin/settings', 'CMSController@loadSettings')->name('settings');
 	Route::post('ssfs-admin/settings', 'CMSController@updateSettings')->name('settings.update');
+
+	Route::get('ssfs-admin/careers', 'CareersController@index')->name('careers.list');
+	Route::get('ssfs-admin/careers/add', 'CareersController@create')->name('careers.create');
+	Route::post('ssfs-admin/careers', 'CareersController@store')->name('careers.store');
+	Route::put('ssfs-admin/careers/{id}', 'CareersController@update')->name('careers.update');
+	Route::get('ssfs-admin/careers/{id}', 'CareersController@edit')->name('careers.edit');
+	Route::get('ssfs-admin/careers/delete/{id}', 'CareersController@destroy')->name('careers.destroy');
+
 });
 
 
