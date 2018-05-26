@@ -24,6 +24,7 @@ mix.styles([
 	'resources/assets/assets-backend/dist/css/AdminLTE.min.css',
 	'resources/assets/assets-backend/dist/css/skins/skin-blue.min.css',
 	'resources/assets/assets-backend/css/admin-styles.css',
+	'resources/assets/assets-backend/css/bootstrap-toggle.min.css',
 ], 'public/admin/css/all.css').version();
 
 
@@ -32,6 +33,7 @@ mix.scripts([
 	'resources/assets/assets-backend/bower_components/bootstrap/dist/js/bootstrap.min.js',
 	'resources/assets/assets-backend/dist/js/adminlte.min.js',
 	'resources/assets/assets-backend/dist/js/demo.js',
+	'resources/assets/assets-backend/js/bootstrap-toggle.min.js',
 ],'public/admin/js/all.js').version();
 
 

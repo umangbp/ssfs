@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CMS;
+use App\Settings;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -125,4 +126,34 @@ class CMSController extends Controller
     {
         //
     }
+
+
+    /**
+     * Function to load settings page
+     * @return settings view
+     */
+    public function loadSettings(){
+
+        $settings = Settings::where('status', 1)->select('id', 'label', 'name', 'value', 'field_type')->orderBy('seq_no')->get();
+
+        return view('admin.settings.settings')->with('settings', $settings);
+    }
+
+    /**
+     * Function to update the settings
+     * @param  
+     * @return 
+     */
+    public function updateSettings(Request $request){
+
+        foreach ($request->all() as $key => $value) {
+            
+            if($key !== '_token'){
+                $settings = Settings::where('name', $key)->update(['value'=>$value]);
+            }
+        }
+
+        return redirect('ssfs-admin/settings')->with('message', 'Settings updated successfully');
+    }
+
 }

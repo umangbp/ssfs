@@ -18,7 +18,8 @@
         <li><a href="{{ route('ssfs.admin.dashboard') }}"><i class="fa fa-dashboard text-aqua"></i> <span>Dashboard</span></a></li>
         <li><a href="{{ route('cms') }}"><i class="fa fa-circle-o text-aqua"></i> <span>CMS</span></a></li>
         <li><a href="{{ route('services.list') }}"><i class="fa fa-truck text-aqua"></i> <span>Services</span></a></li>
-        <li><a href="#"><i class="fa fa-group text-aqua"></i> <span>Team</span></a></li>
+        <li><a href="{{ route('banner.list') }}"><i class="fa fa-group text-aqua"></i> <span>Banner</span></a></li>
+        <li><a href="{{ route('settings') }}"><i class="fa fa-gear text-aqua"></i> <span>Settings</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

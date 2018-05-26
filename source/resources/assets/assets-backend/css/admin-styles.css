@@ -13,3 +13,19 @@
 .err-block{
 	padding-top: 5px;
 }
+
+.alert a {
+	text-decoration: none;
+}
+
+.pad{
+	padding: 20px;
+}
+
+.badge-primary {
+    background-color: #0275d8 !important;
+}
+
+.badge-danger {
+    background-color: #d9534f !important;
+}

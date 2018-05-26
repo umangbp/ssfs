@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\CMS;
 use App\Services;
 use App\Settings;
+use App\Banner;
 
 class SiteController extends Controller
 {	
@@ -30,9 +31,11 @@ class SiteController extends Controller
             
             // fetching list of services
             $services = Services::select('id', 'title', 'url','short_desc', 'description', 'position')->orderBy('position')->get();
+
+            $banners = Banner::where('status', 1)->select('id', 'banner_text', 'banner_sub_text', 'banner_image')->orderBy('sequence_no')->get();
             
             // if records exist
-            if(!empty($cms) && !empty($services)){
+            if(!empty($cms) && !empty($services) && !empty($banners)){
 
                 $cms_array = [];
                 $contacts_array = [];
@@ -41,11 +44,16 @@ class SiteController extends Controller
                     $cms_array[$content->slug] = $content->content;
                 }
 
+                foreach ($banners as $key => $banner) {
+                    $banners[$key]->banner_image = url('front/images/home-slider/'.$banner->banner_image);
+                }
 
                 $content['cms'] = $cms_array;
                 $content['services'] = $services;
 
-                return view('front.index')->with('content', $content)->with('headerData', $this->fetchHeaderData());
+                return view('front.index')->with('content', $content)
+                                          ->with('banners', $banners)
+                                          ->with('headerData', $this->fetchHeaderData());
             }
             else{
                 echo "something went wrong.";

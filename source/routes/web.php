@@ -50,11 +50,15 @@ Route::middleware(['check.login'])->group(function () {
 	Route::get('ssfs-admin/services/{id}', 'ServicesController@edit')->name('services.edit');
 	Route::put('ssfs-admin/services/{id}', 'ServicesController@update')->name('services.update');
 
-	Route::get('ssfs-admin/banners', 'BannerController@index')->name('banners.list');
-	Route::get('ssfs-admin/banners', 'BannerController@create')->name('banners.create');
-	Route::post('ssfs-admin/banners', 'BannerController@store')->name('banners.store');
-	Route::get('ssfs-admin/banners', 'BannerController@edit')->name('banners.edit');
-	Route::put('ssfs-admin/banners', 'BannerController@update')->name('banners.update');
+	Route::get('ssfs-admin/banners/add', 'BannerController@create')->name('banner.create');
+	Route::get('ssfs-admin/banners', 'BannerController@index')->name('banner.list');
+	Route::post('ssfs-admin/banners', 'BannerController@store')->name('banner.store');
+	Route::put('ssfs-admin/banners/{id}', 'BannerController@update')->name('banner.update');
+	Route::get('ssfs-admin/banners/{id}', 'BannerController@edit')->name('banner.edit');
+	Route::get('ssfs-admin/banners/delete/{id}', 'BannerController@destroy')->name('banner.destroy');
+
+	Route::get('ssfs-admin/settings', 'CMSController@loadSettings')->name('settings');
+	Route::post('ssfs-admin/settings', 'CMSController@updateSettings')->name('settings.update');
 });
 
 
