@@ -10,7 +10,7 @@
             <a href="{{ route('home') }}" class="tnit-btn tnit-btn_v2 pull-left"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Go Back</a>
           </div>
           <div class="col-md-4 col-sm-6 col-xs-12">
-            <h2>{!! $about_us['about-us']->title !!}</h2>
+            <h2>Careers</h2>
           </div>
           <div class="col-md-4 col-sm-3 col-xs-12">
             

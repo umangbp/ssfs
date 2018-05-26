@@ -8,6 +8,7 @@ use App\CMS;
 use App\Services;
 use App\Settings;
 use App\Banner;
+use App\Careers;
 
 class SiteController extends Controller
 {	
@@ -146,7 +147,17 @@ class SiteController extends Controller
      * @return 
      */
     public function loadCareersPage(){
-        return view('front.careers');
+
+        try {
+        
+            $careers = Careers::where('status', 1)->select('job_title', 'job_description', 'job_location')->orderBy('created_at', 'DESC')->get();
+
+            return view('front.careers')->with('careers', $careers)->with('headerData', $this->fetchHeaderData());
+
+        } catch (Exception $e) {
+            print_r('exception - ', $e->getMessage());die;
+        }
+
     }
 
     /**
