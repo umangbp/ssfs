@@ -5,6 +5,10 @@
         <meta charset="utf-8">
         <meta name="description" content="HTML5 and CSS3 Food Responsive Template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="shortcut icon" href="{{ asset('front/images/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('front/images/favicon.ico') }}" type="image/x-icon">
+
         <title>Food Responsive HTML5 Template</title>
 
         <!--All CSS-->

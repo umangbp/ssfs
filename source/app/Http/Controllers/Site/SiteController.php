@@ -31,7 +31,7 @@ class SiteController extends Controller
             $cms = CMS::whereIn('slug',['home_about_us'])->select('slug','title','content')->get();
             
             // fetching list of services
-            $services = Services::select('id', 'title', 'url','short_desc', 'description', 'position')->orderBy('position')->get();
+            $services = Services::select('id', 'title', 'url','short_desc', 'description', 'position')->orderBy('position')->limit(3)->get();
 
             $banners = Banner::where('status', 1)->select('id', 'banner_text', 'banner_sub_text', 'banner_image')->orderBy('sequence_no')->get();
             
@@ -150,7 +150,7 @@ class SiteController extends Controller
 
         try {
         
-            $careers = Careers::where('status', 1)->select('job_title', 'job_description', 'job_location')->orderBy('created_at', 'DESC')->get();
+            $careers = Careers::where('status', 1)->select('job_title', 'job_description', 'job_location')->get();
 
             return view('front.careers')->with('careers', $careers)->with('headerData', $this->fetchHeaderData());
 
@@ -175,7 +175,7 @@ class SiteController extends Controller
             
             $cms = CMS::whereIn('slug',['short_address','full_address'])->select('slug','title','content')->get();
 
-            $services = Services::select('id', 'title','url','short_desc', 'description', 'position')->orderBy('position')->get()->toArray();
+            $services = Services::select('id', 'title','url','short_desc', 'description', 'position')->orderBy('position')->limit(3 )->get()->toArray();
 
 
              // if records exist

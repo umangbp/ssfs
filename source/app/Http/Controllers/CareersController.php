@@ -59,7 +59,7 @@ class CareersController extends Controller
         // validating the input 
         $validator = Validator::make($request->all(),[
             'job_title' => 'required | max:50',
-            'job_description' => 'required | max:200',
+            'job_description' => 'max:500',
             'job_location' => 'required | max:100'
         ]);
 
@@ -139,7 +139,7 @@ class CareersController extends Controller
         // validating the data before storing it in database
         $validator = Validator::make($request->all(), [
             'job_title' => 'required | max:50',
-            'job_description' => 'required | max:200',
+            'job_description' => 'max:500',
             'job_location' => 'required | max:100',
             'status' => 'required | boolean'
         ]);

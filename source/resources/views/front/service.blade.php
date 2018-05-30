@@ -3,7 +3,7 @@
 @section('inner-banner')
 	
 	<!--Inner Banner Content Start-->
-    <div class="tnit-inner-banner" id="tnit-about-banner">
+    <div class="tnit-inner-banner" id="tnit-services-banner">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">

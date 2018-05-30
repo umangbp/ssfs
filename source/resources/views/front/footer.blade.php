@@ -8,13 +8,7 @@
         <!--Widget Start-->
         <div class="widget widget-about">
           <div>
-          <strong class="ft-logo">
-            <a href="index.html">
-              <img src="{{ asset('front/images/SSFS_LOGO.png') }}" height= "113" alt="">
-            </a>
-          </strong>
-          </div>
-          <div>
+            <h4>Contact Us</h4>
             <ul class="about-info-listed">
               <li>
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -37,7 +31,7 @@
       <div class="col-md-4 col-sm-8 col-xs-12">
         <!--Widget Start-->
         <div class="widget widget-links">
-          <h4>Footer Links</h4>
+          <h4>Site Links</h4>
           <ul class="ft-nav">
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('about-us') }}">About</a></li>

@@ -865,7 +865,6 @@ Innner Css
 .tnit-inner-banner{
     float: left;
     width: 100%;
-    background: url(../images/inner-banner-img-01.jpg) top center no-repeat;
     background-size: cover;
     padding: 105px 0 50px;
     text-align: center;
@@ -886,21 +885,15 @@ Innner Css
 
 
 #tnit-services-banner{
-    background: url(../images/inner-banner-services-img.jpg) top center no-repeat;
+    background: url(/front/images/inner-banners/inner_banner-services-img.webp) top center no-repeat;
     background-size: cover;
 }
-#tnit-menu-banner{
-    background: url(../images/inner-banner-menu-img.jpg) top center no-repeat;
+
+#tinit-career-banner{
+    background: url(/front/images/inner-banners/inner_banner_careers.webp) top center no-repeat;
     background-size: cover;
 }
-#tnit-project-banner{
-    background: url(../images/inner-banner-gallery-img.jpg) top center no-repeat;
-    background-size: cover;
-}
-#tnit-team-banner{
-    background: url(../images/inner-banner-team-img.jpg) top center no-repeat;
-    background-size: cover;
-}
+
 .tnit-inner-banner > img{
     max-width: 100%;
     height: auto;

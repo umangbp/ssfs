@@ -5,7 +5,7 @@
         @foreach($banners as $banner)
         <div class="item">
             {{-- <img src="{{ asset('front/images/banner-img-01.jpg') }}" alt=""> --}}
-            <img src="{{ $banner->banner_image }}" alt="">
+            <img src="{{ $banner->banner_image }}" alt="" style="max-height: 700px">
             <!--Banner Caption Start-->
              <div class="banner-caption">
                 <div class="container">
