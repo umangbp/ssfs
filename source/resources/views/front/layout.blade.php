@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="{{ asset('front/images/favicon.ico') }}" type="image/x-icon">
         <link rel="icon" href="{{ asset('front/images/favicon.ico') }}" type="image/x-icon">
 
-        <title>Food Responsive HTML5 Template</title>
+        <title>SSFS</title>
 
         <!--All CSS-->
         <link rel="stylesheet" href="{{ mix('front/css/all.css') }}" media='all'>

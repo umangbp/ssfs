@@ -1076,7 +1076,7 @@ Accordian Css*/
 }
 .accordion-tab .date{
     font-family: 'Poppins', sans-serif;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 18px;
     font-weight: 500;
     width: 135px;
@@ -1096,13 +1096,14 @@ Accordian Css*/
 }
 .accordion-tab h5{
     display: inline-block;
+    margin-left: 50px;
 }
 .accordion-tab h5 .fa{
     margin-left: 5px;
 }
 #tnit-accordion .accordion-inner{
     padding-right: 0;
-    padding-left: 135px;
+    padding-left: 115px;
     height: auto !important;
     border: none;
     position: relative;
@@ -18720,4 +18721,10 @@ header .navbar-default .navbar-toggle:focus {
    .about-info-listed{
    	
    }
+
+
+   .pd-res-30{
+   	padding-top: 30px;
+   }
+
 }

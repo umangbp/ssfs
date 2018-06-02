@@ -44,7 +44,7 @@
                     <div class="accordion-tab">
                       <span class="date">2016</span>
                       <h5>
-                        Achievements in the year of 2016  
+                        Achievements in year 2016  
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                       </h5>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="accordion-tab">
                       <span class="date">2017</span>
                       <h5>
-                        Achievements in the year of 2017  
+                        Achievements in year 2017  
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                       </h5>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="accordion-tab">
                       <span class="date">2018</span>
                       <h5>
-                        Achievements in the year of 2018  
+                        Achievements in year 2018  
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                       </h5>
                     </div>

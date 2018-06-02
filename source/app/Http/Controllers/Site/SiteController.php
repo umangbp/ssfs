@@ -61,7 +61,7 @@ class SiteController extends Controller
             }
 
         } catch (\Exception $e) {
-            echo "Exception Occured";
+            echo "Exception Occured-".$e->getMessage();
         }
     }
 

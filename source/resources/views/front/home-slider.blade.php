@@ -1,6 +1,6 @@
 <div class="tnit-banner">
     <!--Banner Slider Start-->
-    <div id="tnit-banner-slider" class="owl-carousel">
+    <div id="tnit-banner-slider" class="owl-carousel" style="background-color: #f5f5f5">
         
         @foreach($banners as $banner)
         <div class="item">

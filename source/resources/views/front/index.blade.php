@@ -8,7 +8,7 @@
 @section('main-content')
 
 <!--About Section Start-->
-<section class="tnit-about-section pd-t70">
+<section class="tnit-about-section pd-t70 pd-res-30">
   <div class="container">
     <div class="row">
       <div class="col-md-7 col-sm-7 col-xs-12">
@@ -17,7 +17,7 @@
           <h2>What Is Sai Shraddha Foods Services?</h2>
           {!! $content['cms']['home_about_us'] !!}
           <div class="bottom-holder">
-            <a href="about.html" class="tnit-btn tnit-btn_v1">Read More</a>
+            <a href="{{ URL('/about-us') }}" class="tnit-btn tnit-btn_v1">Read More</a>
             <span class="signature"></span>
           </div>
         </div><!--About Text End-->
