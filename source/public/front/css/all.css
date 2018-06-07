@@ -14384,6 +14384,19 @@ Media Quires For Mobile
 -------------------------------------------------*/
 @media (max-width: 480px) {
 
+	.accordion-tab h5{
+		
+		margin-left: 35px;
+	}
+
+}
+
+@media (max-width: 320px) {
+
+	.accordion-tab h5{
+		
+		margin-left: 35px;
+	}
 
 }
 
@@ -18728,3 +18741,4 @@ header .navbar-default .navbar-toggle:focus {
    }
 
 }
+

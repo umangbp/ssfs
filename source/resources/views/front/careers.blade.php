@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
               <div>
-                <p class="join-us-description">It's not only about doing your job when you are working with Sai Shraddha Foods Services, but it's about the beautiful journy that you live with us.</p><br/>
+                <p class="join-us-description">It's not only about doing your job when you are working with Sai Shraddha Foods Services, but it's about the beautiful journey that you live with us.</p><br/>
               </div>
               <div class="job-openings-block">
                 

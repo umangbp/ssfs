@@ -34,7 +34,7 @@ class BannerController extends Controller
                 return view('admin.banner.list-banner')->with('banners', $banners);
             }
             else{
-                echo "something went wrong";
+                return view('admin.banner.list-banner')->with('banners', []);
             }
 
         } catch (Exception $e) {

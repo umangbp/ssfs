@@ -37,7 +37,7 @@
 							    	{{ Form::label('banner_text_label', 'Banner Text', ['class' => '']) }}
 							    	{{ Form::text('banner_text',null,['class' => 'form-control', 'placeholder' => 'Please Enter Banner Text']) }}
 									<div class="err-block">
-										<span class="text-danger">{{ $errors->first('banner_te') }}</span>
+										<span class="text-danger">{{ $errors->first('banner_text') }}</span>
 									</div>
 								</div>
 							</div>

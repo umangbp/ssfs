@@ -29,13 +29,6 @@
 						    </div>
 						@endif
 
-						@if (session('invalid_file'))
-						    <div class="alert alert-danger">
-						    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						        <span>{{ session('invalid_file') }}</span>
-						    </div>
-						@endif
-
 						{{ Form::model($career,['route' => ['careers.update', $career->id], 'method' => 'PUT']) }}
 						<div class="row">
 							<div class="col-md-6">

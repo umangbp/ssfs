@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\CMS;
 use App\Settings;
+use App\Careers;
+use App\Banner;
+use App\Services;
+use App\TeamMembers;
+
 use Illuminate\Http\Request;
 use Validator;
 
@@ -161,7 +166,30 @@ class CMSController extends Controller
      * @return [type] [description]
      */
     public function loadDashboard(){
-        return view('admin.theme.index');
+
+        try {
+            
+            $services_count = Services::where('status', 1)->count();
+            $careers_count = Careers::where('status', 1)->count();
+            $banners_count = Banner::where('status', 1)->count();
+            $members_count = TeamMembers::where('status', 1)->count();
+
+            $members = TeamMembers::select('id', 'first_name', 'last_name', 'designation', 'image')->limit(8)->get();
+            
+            return view('admin.theme.index')->with('services_count', $services_count)
+                                            ->with('careers_count', $careers_count)
+                                            ->with('banners_count', $banners_count)
+                                            ->with('members_count', $members_count)
+                                            ->with('members', $members);
+
+        } catch (\Exception $e) {
+            
+            return view('admin.theme.index')->with('services_count', 0)
+                                            ->with('careers_count', 0)
+                                            ->with('banners_count', 0)
+                                            ->with('members_count', 0)
+                                            ->with('members', []);            
+        }
     }
 
     /**

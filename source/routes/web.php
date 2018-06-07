@@ -63,6 +63,14 @@ Route::middleware(['check.login'])->group(function () {
 	Route::get('ssfs-admin/careers/{id}', 'CareersController@edit')->name('careers.edit');
 	Route::get('ssfs-admin/careers/delete/{id}', 'CareersController@destroy')->name('careers.destroy');
 
+
+	Route::get('ssfs-admin/team-members', 'TeamMemberController@index')->name('team-members.list');
+	Route::get('ssfs-admin/team-members/add', 'TeamMemberController@create')->name('team-members.create');
+	Route::post('ssfs-admin/team-members', 'TeamMemberController@store')->name('team-members.store');
+	Route::put('ssfs-admin/team-members/{id}', 'TeamMemberController@update')->name('team-members.update');
+	Route::get('ssfs-admin/team-members/{id}', 'TeamMemberController@edit')->name('team-members.edit');
+	Route::get('ssfs-admin/team-members/delete/{id}', 'TeamMemberController@destroy')->name('team-members.destroy');
+
 });
 
 

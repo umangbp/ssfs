@@ -14,7 +14,7 @@
                    <div class="top-inner">
                        <div class="row">
                            <div class="col-md-6 col-sm-6 col-xs-12">
-                               <span class="welcome">Welcome To <a href="#">{{ $headerData['company_name'] }}</a></span>
+                               <span class="welcome">Welcome To <a href="{{ route('home') }}">{{ $headerData['company_name'] }}</a></span>
                            </div>
                        </div>
                    </div>

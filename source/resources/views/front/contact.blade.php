@@ -39,7 +39,7 @@
                 </li>
                 <li>
                   <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                  <h5>{{ $headerData['whatsapp_number'] }}</h5>
+                  <h5><a target="_blank" href="https://api.whatsapp.com/send?phone={{ $headerData['whatsapp_number'] }}">{{ $headerData['whatsapp_number'] }}</a></h5>
                   <p>Whatsapp Us</p>
                 </li>
                 <li>

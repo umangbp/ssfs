@@ -42,47 +42,77 @@
                   <div id="tnit-accordion">
                     <!--Tab Inner Row Start-->
                     <div class="accordion-tab">
-                      <span class="date">2016</span>
+                      <span class="date">2014</span>
                       <h5>
-                        Achievements in year 2016  
+                        Achievements  
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                       </h5>
                     </div>
                     <div class="accordion-inner">
                       <p>
-                      Praesent enim tellus, rutrum sit amet velit ac, rhoncus gravida dolor. Suspendisse bibendum pharetra urna sit amet aliquet. Maecenas congue metus eu orci fringilla tempor. Vivamus commodo rutrum risus, efficitur porttitor mauris rutrum nec. Suspendisse pulvinar vehicula neque ut ullamcorper. Morbi lorem velit, ullamcorper vitae gravida.
+                      We started our journy in year 2014 with a strong vision and an unique idea of providing range of quality catering services to industrial and corporate clients. Our dedicated team at Sai Shraddha Foods Services worked very hard to establish themself into the catering business.
                       </p>
                     </div>
                     <!--Tab Inner Row End-->
+
+                    <!--Tab Inner Row Start-->
+                    <div class="accordion-tab">
+                      <span class="date">2015</span>
+                      <h5>
+                        Achievements
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                      </h5>
+                    </div>
+                    <div class="accordion-inner">
+                      <p>
+                      With our exceptional food quality and timely delivery, we became one of the fastest growing corporate catering provider within a year of establishment. We are now a popular choice for corporate catering services among our clients.  
+                      </p>
+                    </div>
+                    <!--Tab Inner Row End-->
+
+                    <!--Tab Inner Row Start-->
+                    <div class="accordion-tab">
+                      <span class="date">2016</span>
+                      <h5>
+                        Achievements
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                      </h5>
+                    </div>
+                    <div class="accordion-inner">
+                      <p>
+                      we are now happily catering more than 2000 employees across various organizations. And still that count is growing rapidly.
+                      </p>
+                    </div>
 
                     <!--Tab Inner Row Start-->
                     <div class="accordion-tab">
                       <span class="date">2017</span>
                       <h5>
-                        Achievements in year 2017  
+                        Achievements
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                       </h5>
                     </div>
                     <div class="accordion-inner">
                       <p>
-                      Praesent enim tellus, rutrum sit amet velit ac, rhoncus gravida dolor. Suspendisse bibendum pharetra urna sit amet aliquet. Maecenas congue metus eu orci fringilla tempor. Vivamus commodo rutrum risus, efficitur porttitor mauris rutrum nec. Suspendisse pulvinar vehicula neque ut ullamcorper. Morbi lorem velit, ullamcorper vitae gravida.
+                      this year has been of phenomenal success for Sai Shraddha Foods Services. This year we have partnered with some of the most well known MNCs and have successfully fulfilled their catering needs. 
                       </p>
                     </div>
-                    <!--Tab Inner Row End-->
 
                     <!--Tab Inner Row Start-->
                     <div class="accordion-tab">
                       <span class="date">2018</span>
                       <h5>
-                        Achievements in year 2018  
+                        Achievements
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                       </h5>
                     </div>
                     <div class="accordion-inner">
                       <p>
-                      Praesent enim tellus, rutrum sit amet velit ac, rhoncus gravida dolor. Suspendisse bibendum pharetra urna sit amet aliquet. Maecenas congue metus eu orci fringilla tempor. Vivamus commodo rutrum risus, efficitur porttitor mauris rutrum nec. Suspendisse pulvinar vehicula neque ut ullamcorper. Morbi lorem velit, ullamcorper vitae gravida.
+                      Sai Shraddah Foods services has become a leader in corporate catering business with a huge client tally. we have doubled our capacity and have successfully set up a brand new kitchen which can cater more than 20000 peoples per day.  
+
                       </p>
                     </div>
+
                     <!--Tab Inner Row End-->
                   </div>
                  </div><!--Accordian Outer End-->
