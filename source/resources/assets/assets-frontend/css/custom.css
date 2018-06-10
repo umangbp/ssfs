@@ -63,7 +63,7 @@ header .navbar-default .navbar-toggle:focus {
 
 
 .tnit-services-section:before{
-	background: url('/front/images/home_page/we_are_offering.webp') !important;
+	/*background: url('/front/images/home_page/we_are_offering.webp') !important;*/
 }
 
 .tnit-menu-section{

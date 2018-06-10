@@ -9,6 +9,7 @@ use App\Services;
 use App\Settings;
 use App\Banner;
 use App\Careers;
+use App\TeamMembers;
 
 class SiteController extends Controller
 {	
@@ -34,7 +35,7 @@ class SiteController extends Controller
             $services = Services::select('id', 'title', 'url','short_desc', 'description', 'position')->orderBy('position')->limit(3)->get();
 
             $banners = Banner::where('status', 1)->select('id', 'banner_text', 'banner_sub_text', 'banner_image')->orderBy('sequence_no')->get();
-            
+       
             // if records exist
             if(!empty($cms) && !empty($services) && !empty($banners)){
 
@@ -57,11 +58,11 @@ class SiteController extends Controller
                                           ->with('headerData', $this->fetchHeaderData());
             }
             else{
-                echo "something went wrong.";
+                return view('front.error');
             }
 
         } catch (\Exception $e) {
-            echo "Exception Occured-".$e->getMessage();
+            return view('front.error');
         }
     }
 
@@ -85,11 +86,11 @@ class SiteController extends Controller
                                             ->with('headerData', $this->fetchHeaderData());
             }
             else{
-                echo 'page-not-found';
+                return view('front.error');
             }
 
         } catch (\Exception $e) {
-            print_r($e);
+            return view('front.error');
         }
 
     }
@@ -113,7 +114,7 @@ class SiteController extends Controller
                                       ->with('about_us', $about_us_content);
         }   
         else{
-            print_r('content not found');die;
+            return view('front.error');
         }
     }
 
@@ -138,7 +139,7 @@ class SiteController extends Controller
                                         ->with('contact_us_data', $contact_us_data);
         }
         else{
-            print_r('content not found');die;
+            return view('front.error');
         }
     }
 
@@ -155,7 +156,25 @@ class SiteController extends Controller
             return view('front.careers')->with('careers', $careers)->with('headerData', $this->fetchHeaderData());
 
         } catch (Exception $e) {
-            print_r('exception - ', $e->getMessage());die;
+            return view('front.error');
+        }
+
+    }
+
+    /**
+     * Function to load Team page
+     * @return 
+     */
+    public function loadTeamPage(){
+
+        try {
+            
+            $members = TeamMembers::where('status',1)->select('id', 'first_name', 'last_name', 'image', 'designation')->get();
+
+            return view('front.team')->with('members', $members)->with('headerData', $this->fetchHeaderData());
+
+        } catch (\Exception $e) {
+            return view('front.error');
         }
 
     }
@@ -194,12 +213,11 @@ class SiteController extends Controller
                 return $headerData;
             }
             else{
-
+                return view('front.error');
             }
 
         } catch (\Exception $e) {
-            
+            return view('front.error');
         }
     }
-
 }

@@ -1145,7 +1145,7 @@ Services Section
     top: 0;
     width: 369px;
     height: 581px;
-    background: url('../images/offering-img-before.jpg');
+    /*background: url('../images/offering-img-before.jpg');*/
     z-index: -1;
 }
 .tnit-services-item{

@@ -71,6 +71,13 @@ Route::middleware(['check.login'])->group(function () {
 	Route::get('ssfs-admin/team-members/{id}', 'TeamMemberController@edit')->name('team-members.edit');
 	Route::get('ssfs-admin/team-members/delete/{id}', 'TeamMemberController@destroy')->name('team-members.destroy');
 
+	Route::get('ssfs-admin/meta', 'MetaController@index')->name('meta.list');
+	Route::get('ssfs-admin/meta/add', 'MetaController@create')->name('meta.create');
+	Route::post('ssfs-admin/meta', 'MetaController@store')->name('meta.store');
+	Route::put('ssfs-admin/meta/{id}', 'MetaController@update')->name('meta.update');
+	Route::get('ssfs-admin/meta/{id}', 'MetaController@edit')->name('meta.edit');
+	Route::get('ssfs-admin/meta/delete/{id}', 'MetaController@destroy')->name('meta.destroy');
+
 });
 
 
@@ -90,6 +97,10 @@ Route::middleware(['check.login'])->group(function () {
 	Route::get('contact-us', 'Site\SiteController@loadContactUsPage')->name('contact-us');
 
 	Route::get('careers', 'Site\SiteController@loadCareersPage')->name('careers');
+
+	Route::get('team', 'Site\SiteController@loadTeamPage')->name('team');
+
+	//Route::get('error', 'Site\SiteController@loadErromPage')->name('error');
 
 	Route::get('/','Site\SiteController@loadHomePage')->name('home');
 
