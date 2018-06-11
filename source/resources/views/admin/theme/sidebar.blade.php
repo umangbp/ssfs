@@ -21,6 +21,7 @@
         <li><a href="{{ route('banner.list') }}"><i class="fa fa-group text-aqua"></i> <span>Banner</span></a></li>
         <li><a href="{{ route('careers.list') }}"><i class="fa fa-briefcase text-aqua"></i> <span>Careers</span></a></li>
         <li><a href="{{ route('team-members.list') }}"><i class="fa fa-group text-aqua"></i> <span>Team Members</span></a></li>
+        <li><a href="{{ route('meta.list') }}"><i class="fa fa-tags text-aqua"></i> <span>Meta Info</span></a></li>
         <li><a href="{{ route('settings') }}"><i class="fa fa-gear text-aqua"></i> <span>Settings</span></a></li>
       </ul>
     </section>

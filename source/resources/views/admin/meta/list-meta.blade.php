@@ -48,9 +48,9 @@
               	<thead>
 	              	<tr>
 	              		<th>#</th>
-	              		<th>Job Title</th>
-	              		<th>Job Description</th>
-	              		<th>Job Location</th>
+	              		<th>Meta Title</th>
+	              		<th>Meta Description</th>
+	              		<th>Meta Keywords</th>
 	              		<th>Status</th>
 	              		<th>Posted On</th>
 	              		<th>Actions</th>
@@ -61,7 +61,7 @@
 
 	              	@isset($careers)
 
-	              		@foreach($careers as $career)
+	              		@foreach($careers as $key => $career)
 
 	              			<tr>
 	              				<td>{{ $career->id }}</td>
@@ -89,7 +89,7 @@
 
 	              	@empty($careers)
 	              			<tr>
-	              				<td  colspan="5" class="text-center"><span>No Job Openings Available</span></td>
+	              				<td  colspan="5" class="text-center"><span>No Meta Info Available</span></td>
 	              			</tr>
 	              	@endempty
               	
