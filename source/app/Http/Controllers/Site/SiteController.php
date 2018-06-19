@@ -10,6 +10,7 @@ use App\Settings;
 use App\Banner;
 use App\Careers;
 use App\TeamMembers;
+use App\MetaInfo;
 
 class SiteController extends Controller
 {	
@@ -219,5 +220,36 @@ class SiteController extends Controller
         } catch (\Exception $e) {
             return view('front.error');
         }
+    }
+
+    public function fetchMetaData($slug=''){
+
+        try {
+            
+            if($slug==''){
+                $slug = 'site';
+            }
+
+            // check if slug exist
+            if(MetaInfo::where('page_name', $slug)->exists()){
+                $meta = MetaInfo::where('page_name', $slug)->select('page_name', 'meta_title', 'meta_description', 'meta_keywords')->first();                
+            }
+            else{
+                $meta = MetaInfo::where('page_name', 'site')->select('page_name', 'meta_title', 'meta_description', 'meta_keywords')->first();
+            }
+
+            // check if meta is not empty
+            if(!empty($meta)){
+                return $meta->toArray();
+            }
+            else{
+                return [];
+            }
+            
+
+        } catch (\Exception $e) {
+            return []; 
+        }
+
     }
 }

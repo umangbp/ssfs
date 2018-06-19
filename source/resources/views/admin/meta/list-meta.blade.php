@@ -5,7 +5,7 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 	  <h1>
-	    Careers
+	    Meta
 	    <small>List</small>
 	  </h1>
 	  <ol class="breadcrumb">
@@ -32,7 +32,7 @@
 				@endif
 
 				@if (session('err_message'))
-				    <div class="alert alert-success">
+				    <div class="alert alert-danger">
 				    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				        <span>{{ session('err_message') }}</span>
 				    </div>
@@ -41,45 +41,47 @@
               <!-- CMS Listing table -->  
             
             <div class="pull-right" style="padding-bottom: 20px;padding-top: 10px;">
-      			<a class="btn btn-primary" href="{{ route('careers.create') }}"><i class="fa fa-file-image-o" aria-hidden="true"></i> Add New Job Opening</a>
+      			<a class="btn btn-primary" href="{{ route('meta.create') }}"><i class="fa fa-file-image-o" aria-hidden="true"></i> Add New Meta</a>
       		</div>
       		<div>
               <table class="table table-bordered table-responsive cms-list">
               	<thead>
 	              	<tr>
 	              		<th>#</th>
+	              		<th>Page Name</th>
 	              		<th>Meta Title</th>
 	              		<th>Meta Description</th>
 	              		<th>Meta Keywords</th>
 	              		<th>Status</th>
-	              		<th>Posted On</th>
+	              		
 	              		<th>Actions</th>
 	              	</tr>
               	</thead>
               	
               	<tbody>
 
-	              	@isset($careers)
+	              	@isset($meta)
 
-	              		@foreach($careers as $key => $career)
+	              		@foreach($meta as $key => $info)
 
 	              			<tr>
-	              				<td>{{ $career->id }}</td>
-	              				<td>{{ $career->job_title }}</td>
-	              				<td>{{ $career->job_description }}</td>
-	              				<td>{{ $career->job_location }}</td>
+	              				<td>{{ $key+1 }}</td>
+	              				<td>{{ $info['page_name'] }}</td>
+	              				<td>{{ $info['meta_title'] }}</td>
+	              				<td>{{ $info['meta_description'] }}</td>
+	              				<td>{{ $info['meta_keywords'] }}</td>
 	              				<td width="100" class="text-center">
-	              					@if($career->status == 1)
+	              					@if($info['status'] == 1)
 	              						<span class="badge badge-pill badge-primary">Active</span>
 	              					@else
 	              						<span class="badge badge-danger">Inactive</span>
 	              					@endif
 	              					
 	              				</td>
-	              				<td>{{ $career->created_at }}</td>
+	              				
 	              				<td  width="110">
-	              					<a class="btn btn-info" href="{{ URL('ssfs-admin/careers/'.$career->id) }}"><i class="fa fa-edit"></i></a>
-	              					<a class="btn btn-danger" href="{{ URL('ssfs-admin/career/delete/'.$career->id) }}"><i class="fa fa-trash"></i></a>
+	              					<a class="btn btn-info" href="{{ URL('ssfs-admin/meta/'.$info['id']) }}"><i class="fa fa-edit"></i></a>
+	              					<a class="btn btn-danger" href="{{ URL('ssfs-admin/meta/delete/'.$info['id']) }}"><i class="fa fa-trash"></i></a>
 	              				</td>
 
 	              			</tr>
@@ -87,9 +89,9 @@
 
 	              	@endisset
 
-	              	@empty($careers)
+	              	@empty($meta)
 	              			<tr>
-	              				<td  colspan="5" class="text-center"><span>No Meta Info Available</span></td>
+	              				<td  colspan="7" class="text-center"><span>No Meta Info Available</span></td>
 	              			</tr>
 	              	@endempty
               	

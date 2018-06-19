@@ -5,13 +5,13 @@
 	
 	<section class="content-header">
 	  <h1>
-	    Career
-	    <small>Edit</small>
+	    Meta Info
+	    <small>Add</small>
 	  </h1>
 	  <ol class="breadcrumb">
 	    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-	    <li><a href="#">Careers</a></li>
-	    <li><a>Edit</a></li>
+	    <li><a href="#">Meta Info</a></li>
+	    <li><a>Add</a></li>
 	  </ol>
 	</section>
 
@@ -22,22 +22,22 @@
 	          	<div class="box box-info">
 	            	<div class="box-body pad">
 	              
-		            	@if (session('invalid_file'))
+		            	@if (session('error'))
 						    <div class="alert alert-danger">
 						    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						        <span>{{ session('invalid_file') }}</span>
+						        <span>{{ session('error') }}</span>
 						    </div>
 						@endif
 
-						{{ Form::model($career,['route' => ['careers.update', $career->id], 'method' => 'PUT']) }}
+						{{ Form::model($meta,['route' => ['meta.update', $meta->id], 'method' => 'PUT']) }}
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 							    	
-							    	{{ Form::label('job_title_label', 'Job Title', ['class' => '']) }}
-							    	{{ Form::text('job_title',null,['class' => 'form-control', 'placeholder' => 'Please Enter Job Title']) }}
+							    	{{ Form::label('page_name', 'Page Name (must be unique and without spaces)', ['class' => '']) }}
+							    	{{ Form::text('page_name',null,['class' => 'form-control', 'placeholder' => 'Please Enter Page Name']) }}
 									<div class="err-block">
-										<span class="text-danger">{{ $errors->first('job_title') }}</span>
+										<span class="text-danger">{{ $errors->first('page_name') }}</span>
 									</div>
 								</div>
 							</div>
@@ -45,37 +45,39 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group"> 	
-							    	{{ Form::label('job_description_label', 'Job Description', ['class' => '']) }}
-							    	{{ Form::text('job_description',null,['class' => 'form-control', 'placeholder' => 'Please Enter Job Description']) }}
+							    	{{ Form::label('meta_title_label', 'Meta Title', ['class' => '']) }}
+							    	{{ Form::text('meta_title',null,['class' => 'form-control', 'placeholder' => 'Please Enter Meta Title']) }}
 
 							    	<div class="err-block">
-										<span class="text-danger">{{ $errors->first('job_description') }}</span>
+										<span class="text-danger">{{ $errors->first('meta_title') }}</span>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								{{ Form::label('job_location_label', 'Job Location', ['class' => '']) }}
-								{{ Form::text('job_location',null,['class' => 'form-control', 'placeholder' => 'Please Enter Job Location']) }}	
+								{{ Form::label('meta_description', 'Meta Description', ['class' => '']) }}
+								{{ Form::textarea('meta_description',null,['class' => 'form-control', 'placeholder' => 'Please Enter Meta Description']) }}	
 
 								<div class="err-block">
-										<span class="text-danger">{{ $errors->first('job_location') }}</span>
+										<span class="text-danger">{{ $errors->first('meta_description') }}</span>
 									</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-2" style="padding-top: 10px;">
-								{{ Form::label('status_career', 'Status', ['class' => '']) }}
-								{{ Form::select('status',['0'=>'in-active', '1' => 'active'], $career->status, ['class'=> 'form-control']) }}	<div class="err-block">
-										<span class="text-danger">{{ $errors->first('status') }}</span>
-									</div>							
+							<div class="col-md-6">
+								{{ Form::label('meta_keywords', 'Meta Keywords', ['class' => '']) }}
+								{{ Form::textarea('meta_keywords',null,['class' => 'form-control', 'placeholder' => 'Please Enter Meta Keywords']) }}	
+
+								<div class="err-block">
+										<span class="text-danger">{{ $errors->first('meta_keywords') }}</span>
+									</div>
 							</div>
 						</div>
 						<div class="row pad-top pad-bottom">
 							<div class="col-md-6">
-								<button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Update</button>
-								<a href="{{ route('careers.list')}}" class="btn btn-danger" style="margin-left:10px"><i class="fa fa-close"></i> Cancel</a>
+								<button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Add</button>
+								<a href="{{ route('meta.list')}}" class="btn btn-danger" style="margin-left:10px"><i class="fa fa-close"></i> Cancel</a>
 							</div>
 						</div>
 						

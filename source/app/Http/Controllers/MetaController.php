@@ -18,7 +18,7 @@ class MetaController extends Controller
     {
         try {
 
-            $meta = MetaInfo::where('status',1)->select('id', 'page_name', 'meta_keywords', 'meta_description', 'meta_title', 'created_at')->get()->toArray();
+            $meta = MetaInfo::where('status',1)->select('id', 'page_name', 'meta_keywords', 'meta_description', 'meta_title', 'status','created_at')->get()->toArray();
 
             
             return view('admin.meta.list-meta')->with('meta', $meta);   
@@ -48,7 +48,7 @@ class MetaController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'page_name' => 'required | max:20',
+            'page_name' => 'required | max:100',
             'meta_title' => 'required | max:100',
             'meta_description' => 'required | max:500',
             'meta_keywords' => 'required'
@@ -67,19 +67,19 @@ class MetaController extends Controller
                 ]);
 
                 if(!empty($meta)){
-                    return redirect('meta.list')->with('message', 'Meta information added successfully');
+                    return redirect('ssfs-admin/meta')->with('message', 'Meta information added successfully');
                 }
                 else{
-                    return redirect('meta.list')->with('err_message', 'Something went wrong. Please try again');
+                    return redirect('ssfs-admin/meta')->with('err_message', 'Something went wrong. Please try again');
                 }
 
             } catch (\Exception $e) {
-                return redirect('meta.list')->with('err_message', 'Something went wrong. Please try again');
+                return redirect('ssfs-admin/meta')->with('err_message', 'Something went wrong. Please try again');
             }
 
         }
         else{
-            return back()->withInput()->with($validator);
+            return back()->withInput()->withErrors($validator);
         }
     }
 
@@ -102,7 +102,14 @@ class MetaController extends Controller
      */
     public function edit($id)
     {
-        //
+        try {
+            
+            $meta = MetaInfo::findOrFail($id);
+            return view('admin.meta.edit-meta')->with('meta',$meta);
+
+        } catch (\Exception $e) {
+            return redirect('ssfs-admin/meta')->with('err_message', 'Something went wrong. Please try again');
+        }
     }
 
     /**
@@ -114,7 +121,44 @@ class MetaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $validator = Validator::make($request->all(), [
+            'page_name' => 'required | max:100',
+            'meta_title' => 'required | max:100',
+            'meta_description' => 'required | max:500',
+            'meta_keywords' => 'required'
+        ]);
+
+        // if all the validation passed
+        if(!$validator->fails()){
+
+            try {
+                
+                $meta = MetaInfo::findOrFail($id);
+
+                $meta->page_name = $request->page_name;
+                $meta->meta_title = $request->meta_title;
+                $meta->meta_description = $request->meta_description;
+                $meta->meta_keywords = $request->meta_keywords;
+
+                $meta_info_saved = $meta->save();
+
+                if($meta_info_saved){
+                    return redirect('ssfs-admin/meta')->with('message', 'Meta information updated successfully');
+                }
+                else{
+                    return redirect('ssfs-admin/meta')->with('err_message', 'Something went wrong. Please try again');
+                }
+
+            } catch (\Exception $e) {
+                return redirect('ssfs-admin/meta')->with('err_message', 'Something went wrong. Please try again');
+            }
+
+        }
+        else{
+            return back()->withInput()->withErrors($validator);
+        }
+
     }
 
     /**
