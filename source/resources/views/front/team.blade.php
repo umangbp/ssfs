@@ -1,5 +1,12 @@
 @extends('front.layout')
 
+@section('meta')
+
+    <title>Team | SSFS</title>
+    <meta name="description" content="Our profession team of chef is all set to serve your needs at your door step">
+    
+@endsection
+
 @section('inner-banner')
 	
 	<!--Inner Banner Content Start-->

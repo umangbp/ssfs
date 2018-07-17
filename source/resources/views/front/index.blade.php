@@ -1,12 +1,21 @@
 
 @extends('front.layout')
 
+@section('meta')
+
+    <title>{{ $metaData['meta_title'] }}</title>
+    <meta name="description" content="{{ $metaData['meta_description'] }}">
+    <meta name="keywords" content="{{ $metaData['meta_keywords'] }}">
+  
+@endsection
+
 @section('home-banner')
   @include('front.home-slider')
 @endsection
 
 @section('main-content')
-
+  
+  
 <!--About Section Start-->
 <section class="tnit-about-section pd-t70 pd-res-30">
   <div class="container">

@@ -104,6 +104,7 @@ Route::middleware(['check.login'])->group(function () {
 
 	Route::get('/','Site\SiteController@loadHomePage')->name('home');
 
+	Route::get('meta','Site\SiteController@fetchMetaData');
 
 /**
  * ****************************Front END**********************************

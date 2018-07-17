@@ -56,6 +56,7 @@ class SiteController extends Controller
 
                 return view('front.index')->with('content', $content)
                                           ->with('banners', $banners)
+                                          ->with('metaData', $this->fetchMetaData('home'))
                                           ->with('headerData', $this->fetchHeaderData());
             }
             else{
@@ -84,6 +85,7 @@ class SiteController extends Controller
                 $service->image = url('front/images/services/'.$service->image);
 
                 return view('front.service')->with('service_details', $service)
+                                            ->with('metaData', $this->fetchMetaData($name))
                                             ->with('headerData', $this->fetchHeaderData());
             }
             else{
@@ -112,6 +114,7 @@ class SiteController extends Controller
             }
 
             return view('front.about')->with('headerData', $this->fetchHeaderData())
+                                      ->with('metaData', $this->fetchMetaData('about-us')) 
                                       ->with('about_us', $about_us_content);
         }   
         else{
@@ -137,6 +140,7 @@ class SiteController extends Controller
             }
 
             return view('front.contact')->with('headerData', $this->fetchHeaderData())
+                                        ->with('metaData', $this->fetchMetaData('contact-us'))
                                         ->with('contact_us_data', $contact_us_data);
         }
         else{
@@ -154,7 +158,9 @@ class SiteController extends Controller
         
             $careers = Careers::where('status', 1)->select('job_title', 'job_description', 'job_location')->get();
 
-            return view('front.careers')->with('careers', $careers)->with('headerData', $this->fetchHeaderData());
+            return view('front.careers')->with('careers', $careers)
+                                        ->with('metaData', $this->fetchMetaData('careers'))
+                                        ->with('headerData', $this->fetchHeaderData());
 
         } catch (Exception $e) {
             return view('front.error');
@@ -172,7 +178,9 @@ class SiteController extends Controller
             
             $members = TeamMembers::where('status',1)->select('id', 'first_name', 'last_name', 'image', 'designation')->get();
 
-            return view('front.team')->with('members', $members)->with('headerData', $this->fetchHeaderData());
+            return view('front.team')->with('members', $members)
+                                     ->with('metaData', $this->fetchMetaData('site'))   
+                                     ->with('headerData', $this->fetchHeaderData());
 
         } catch (\Exception $e) {
             return view('front.error');
@@ -222,6 +230,12 @@ class SiteController extends Controller
         }
     }
 
+
+    /**
+     * Fetch Meda Data
+     * @param  string $slug 
+     * @return array       
+     */
     public function fetchMetaData($slug=''){
 
         try {

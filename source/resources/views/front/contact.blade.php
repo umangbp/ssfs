@@ -1,5 +1,13 @@
 @extends('front.layout')
 
+@section('meta')
+
+    <title>{{ $metaData['meta_title'] }}</title>
+    <meta name="description" content="{{ $metaData['meta_description'] }}">
+    <meta name="keywords" content="{{ $metaData['meta_keywords'] }}">
+  
+@endsection
+
 @section('inner-banner')
 	
 	<!--Inner Banner Content Start-->
